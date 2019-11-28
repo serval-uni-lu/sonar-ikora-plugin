@@ -4,9 +4,47 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.sonarsource.parent</groupId>
+        <artifactId>parent</artifactId>
+        <version>52</version>
+    </parent>
+
     <groupId>org.ukwikora</groupId>
     <artifactId>sonar-ukwikora-plugin</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>SonarSource :: Robot Framework</name>
+    <description>Code Analyzer for Robot Framework</description>
+    <url>http://github.com/kabinja/sonar-ukwikora-plugin</url>
+
+    <inceptionYear>2019</inceptionYear>
+
+    <developers>
+        <developer>
+            <id>kabinja</id>
+            <name>Renaud Rwemalika</name>
+            <email>renaudrwemalika@gmail.com</email>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <sonar.apiVersion>7.9</sonar.apiVersion>
+        <jdk.min.version>1.8</jdk.min.version>
+        <maven.min.version>3.3.9</maven.min.version>
+        <timestamp>${maven.build.timestamp}</timestamp>
+        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
+        <sonar.sources>src/main/java,src/main/js</sonar.sources>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.sonarsource.sonarqube</groupId>
+            <artifactId>sonar-plugin-api</artifactId>
+            <version>${sonar.apiVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
 </project>
