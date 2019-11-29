@@ -8,8 +8,11 @@ import java.util.List;
 
 public class UkwikoraLanguage extends AbstractLanguage {
 
-    private static final String[] DEFAULT_SUFFIXES = {".robot"};
     public static final String KEY = "ukwikora";
+    public static final String REPOSITORY_KEY = "ukwikora";
+    public static final String REPOSITORY_NAME = "SonarAnalyzer";
+
+    private static final String[] DEFAULT_SUFFIXES = {".robot"};
     private static final String UKWIKORA_LANGUAGE_NAME = "Robot Framework";
 
     private final Configuration configuration;
