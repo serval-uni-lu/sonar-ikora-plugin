@@ -1,6 +1,5 @@
 package org.ukwikora;
 
-import org.sonar.api.SonarProduct;
 import org.sonar.api.batch.fs.FilePredicate;
 import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
@@ -14,6 +13,10 @@ import org.sonar.api.rule.RuleKey;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.ukwikora.checks.ParsingErrorCheck;
+
+import org.ukwikora.builder.Builder;
+import org.ukwikora.model.Project;
+import org.ukwikora.model.SourceFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +47,7 @@ public class UkwikoraSensor implements Sensor {
     public void describe(SensorDescriptor descriptor) {
         descriptor
                 .onlyOnLanguage(UkwikoraLanguage.KEY)
-                .name("XML Sensor");
+                .name("Robot Framework Sensor");
     }
 
     @Override
@@ -54,6 +57,26 @@ public class UkwikoraSensor implements Sensor {
 
         if (inputFiles.isEmpty()) {
             return;
+        }
+
+        LOG.info("Start building projects...");
+        Builder builder = new Builder();
+        Project project = builder.build(fileSystem.baseDir(), true);
+
+        LOG.info(String.format(
+                "Built in %d ms [parsing: %d ms; linking: %d ms]",
+                builder.getBuildTime(),
+                builder.getParsingTime(),
+                builder.getLinkingTime()
+        ));
+
+        if(!builder.getErrors().isEmpty()){
+            LOG.warn(String.format("Detected %d errors while building", builder.getErrors().getSize()));
+        }
+
+        for(InputFile inputFile: inputFiles){
+            SourceFile sourceFile = project.getSourceFile(inputFile.uri());
+            LineCounter.analyse(context, fileLinesContextFactory, sourceFile, inputFile);
         }
     }
 }

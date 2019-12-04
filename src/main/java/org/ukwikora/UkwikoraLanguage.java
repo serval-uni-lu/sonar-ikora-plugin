@@ -15,6 +15,10 @@ public class UkwikoraLanguage extends AbstractLanguage {
     private static final String[] DEFAULT_SUFFIXES = {".robot"};
     private static final String UKWIKORA_LANGUAGE_NAME = "Robot Framework";
 
+    public static final String UKWIKORA_RESOURCE_PATH = "org/ukwikora/l10n/ukwikora/rules/ukwikora";
+    public static final String SONAR_WAY_PROFILE_NAME = "Sonar way";
+    public static final String SONAR_WAY_PATH = "org/sonar/l10n/ukwikora/rules/ukwikora/Sonar_way_profile.json";
+
     private final Configuration configuration;
 
     public UkwikoraLanguage(Configuration configuration) {

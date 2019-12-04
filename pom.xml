@@ -4,17 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.sonarsource.parent</groupId>
-        <artifactId>parent</artifactId>
-        <version>52</version>
-    </parent>
-
     <groupId>org.ukwikora</groupId>
     <artifactId>sonar-ukwikora-plugin</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>sonar-plugin</packaging>
 
-    <name>SonarSource :: Robot Framework</name>
+    <name>Ukwikora Analyzer</name>
     <description>Code Analyzer for Robot Framework</description>
     <url>http://github.com/kabinja/sonar-ukwikora-plugin</url>
 
@@ -31,12 +26,17 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <sonar.apiVersion>7.9</sonar.apiVersion>
+        <maven.min.version>3.6.0</maven.min.version>
         <jdk.min.version>1.8</jdk.min.version>
-        <maven.min.version>3.3.9</maven.min.version>
-        <timestamp>${maven.build.timestamp}</timestamp>
-        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
-        <sonar.sources>src/main/java,src/main/js</sonar.sources>
     </properties>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <dependencies>
         <dependency>
@@ -45,6 +45,69 @@
             <version>${sonar.apiVersion}</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.ukwikora</groupId>
+            <artifactId>ukwikora-core</artifactId>
+            <version>0.0.1</version>
+        </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.PluginXmlResourceTransformer"/>
+                            </transformers>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
+                            <minimizeJar>true</minimizeJar>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
+                <artifactId>sonar-packaging-maven-plugin</artifactId>
+                <version>1.17</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <pluginKey>ukwikora</pluginKey>
+                    <pluginClass>org.ukwikora.UkwikoraPlugin</pluginClass>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.min.version}</version>
+                <configuration>
+                    <source>${jdk.min.version}</source>
+                    <target>${jdk.min.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

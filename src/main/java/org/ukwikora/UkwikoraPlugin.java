@@ -19,8 +19,8 @@ public final class UkwikoraPlugin implements Plugin {
                         .onQualifiers(Qualifiers.PROJECT)
                         .build(),
                 UkwikoraLanguage.class,
-                UkwikoraRuleDefinition.class,
-                UkwikoraSonarWayProfile.class,
+                UkwikoraRulesDefinition.class,
+                UkwikoraQualityProfile.class,
                 UkwikoraSensor.class
         );
     }
