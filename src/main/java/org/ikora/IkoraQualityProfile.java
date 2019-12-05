@@ -1,23 +1,23 @@
-package org.ukwikora;
+package org.ikora;
 
 import org.sonar.api.SonarRuntime;
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
 
-public class UkwikoraQualityProfile implements BuiltInQualityProfilesDefinition {
+public class IkoraQualityProfile implements BuiltInQualityProfilesDefinition {
     private final SonarRuntime sonarRuntime;
 
-    public UkwikoraQualityProfile(SonarRuntime sonarRuntime){
+    public IkoraQualityProfile(SonarRuntime sonarRuntime){
         this.sonarRuntime = sonarRuntime;
     }
 
     @Override
     public void define(Context context) {
         NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile(
-                UkwikoraLanguage.SONAR_WAY_PROFILE_NAME,
-                UkwikoraLanguage.KEY
+                IkoraLanguage.SONAR_WAY_PROFILE_NAME,
+                IkoraLanguage.KEY
         );
 
-        //profile.activateRule(UkwikoraLanguage.REPOSITORY_KEY, "ParsingErrorCheck");
+        //profile.activateRule(IkoraLanguage.REPOSITORY_KEY, "ParsingErrorCheck");
 
         profile.done();
     }

@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.ukwikora</groupId>
-    <artifactId>sonar-ukwikora-plugin</artifactId>
+    <groupId>org.ikora</groupId>
+    <artifactId>sonar-ikora-plugin</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>sonar-plugin</packaging>
 
-    <name>Ukwikora Analyzer</name>
+    <name>Ikora Analyzer</name>
     <description>Code Analyzer for Robot Framework</description>
-    <url>http://github.com/kabinja/sonar-ukwikora-plugin</url>
+    <url>http://github.com/kabinja/sonar-ikora-plugin</url>
 
     <inceptionYear>2019</inceptionYear>
 
@@ -47,8 +47,8 @@
         </dependency>
 
         <dependency>
-            <groupId>org.ukwikora</groupId>
-            <artifactId>ukwikora-core</artifactId>
+            <groupId>org.ikora</groupId>
+            <artifactId>ikora-core</artifactId>
             <version>0.0.1</version>
         </dependency>
     </dependencies>
@@ -93,8 +93,8 @@
                 <version>1.17</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <pluginKey>ukwikora</pluginKey>
-                    <pluginClass>org.ukwikora.UkwikoraPlugin</pluginClass>
+                    <pluginKey>ikora</pluginKey>
+                    <pluginClass>org.ikora.IkoraPlugin</pluginClass>
                 </configuration>
             </plugin>
 
