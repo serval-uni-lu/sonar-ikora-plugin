@@ -8,14 +8,11 @@ public class CheckRepository {
     private CheckRepository(){}
 
     private static final List<Class<? extends IkoraCheck>> CHECK_CLASSES = Arrays.asList(
-            ParsingErrorCheck.class
+            SyntaxErrorCheck.class,
+            SymbolErrorCheck.class
     );
 
     public static List<Class<? extends IkoraCheck>> getCheckClasses(){
         return CHECK_CLASSES;
-    }
-
-    public static Class<? extends IkoraCheck> getParsingErrorCheckClass(){
-        return ParsingErrorCheck.class;
     }
 }

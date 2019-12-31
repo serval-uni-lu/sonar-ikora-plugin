@@ -1,13 +1,29 @@
 package org.ikora.checks;
 
-import org.sonar.check.Rule;
+import org.ikora.IkoraSensor;
+import org.ikora.error.LocalError;
+import org.sonar.api.utils.log.Logger;
+import org.sonar.api.utils.log.Loggers;
 
-@Rule(key = ParsingErrorCheck.RULE_KEY)
+import java.util.Set;
+
 public class ParsingErrorCheck extends IkoraLintCheck {
-    public static final String RULE_KEY = "E001";
+    private static final Logger LOG = Loggers.get(IkoraSensor.class);
 
-    @Override
-    public void validate() {
-        super.validate();
+    protected void addViolations(Set<LocalError> errors){
+        if(ikoraSourceCode.getErrors().isEmpty()){
+            return;
+        }
+
+        for(LocalError error: errors){
+            LOG.info(String.format("Add error: %s", error.getMessage()));
+
+            IkoraIssue issue = new IkoraIssue(ruleKey,
+                    error.getMessage(),
+                    error.getPosition().getStartMark().getLine(),
+                    error.getPosition().getStartMark().getColumn());
+
+            ikoraSourceCode.addViolation(issue);
+        }
     }
 }

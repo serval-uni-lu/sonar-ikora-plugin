@@ -17,7 +17,7 @@ public class IkoraLanguage extends AbstractLanguage {
 
     public static final String IKORA_RESOURCE_PATH = "org/ikora/l10n/ikora/rules/ikora";
     public static final String SONAR_WAY_PROFILE_NAME = "Sonar way";
-    public static final String SONAR_WAY_PATH = "org/sonar/l10n/ikora/rules/ikora/Sonar_way_profile.json";
+    public static final String SONAR_WAY_PATH = IKORA_RESOURCE_PATH + "/sonar-way-profile.json";
 
     private final Configuration configuration;
 

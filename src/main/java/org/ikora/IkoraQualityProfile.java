@@ -1,24 +1,19 @@
 package org.ikora;
 
-import org.sonar.api.SonarRuntime;
 import org.sonar.api.server.profile.BuiltInQualityProfilesDefinition;
+import org.sonarsource.analyzer.commons.BuiltInQualityProfileJsonLoader;
 
 public class IkoraQualityProfile implements BuiltInQualityProfilesDefinition {
-    private final SonarRuntime sonarRuntime;
-
-    public IkoraQualityProfile(SonarRuntime sonarRuntime){
-        this.sonarRuntime = sonarRuntime;
-    }
 
     @Override
     public void define(Context context) {
-        NewBuiltInQualityProfile profile = context.createBuiltInQualityProfile(
+        NewBuiltInQualityProfile sonarWay = context.createBuiltInQualityProfile(
                 IkoraLanguage.SONAR_WAY_PROFILE_NAME,
                 IkoraLanguage.KEY
         );
 
-        //profile.activateRule(IkoraLanguage.REPOSITORY_KEY, "ParsingErrorCheck");
+        BuiltInQualityProfileJsonLoader.load(sonarWay, IkoraLanguage.REPOSITORY_KEY, IkoraLanguage.SONAR_WAY_PATH);
 
-        profile.done();
+        sonarWay.done();
     }
 }

@@ -26,6 +26,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <sonar.apiVersion>7.9</sonar.apiVersion>
+        <sonar.analyzerCommons.version>1.11.0.541</sonar.analyzerCommons.version>
         <maven.min.version>3.6.0</maven.min.version>
         <jdk.min.version>1.8</jdk.min.version>
     </properties>
@@ -44,6 +45,12 @@
             <artifactId>sonar-plugin-api</artifactId>
             <version>${sonar.apiVersion}</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.sonarsource.analyzer-commons</groupId>
+            <artifactId>sonar-analyzer-commons</artifactId>
+            <version>${sonar.analyzerCommons.version}</version>
         </dependency>
 
         <dependency>

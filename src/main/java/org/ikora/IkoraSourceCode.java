@@ -1,6 +1,7 @@
 package org.ikora;
 
 import org.ikora.checks.IkoraIssue;
+import org.ikora.error.Errors;
 import org.ikora.model.SourceFile;
 import org.sonar.api.batch.fs.InputFile;
 
@@ -10,23 +11,20 @@ import java.util.List;
 
 public class IkoraSourceCode {
     private final List<IkoraIssue> ikoraIssues = new ArrayList<>();
-    private IkoraIssue syntaxError = null;
+    private final InputFile inputFile;
+    private final SourceFile sourceFile;
+    private final Errors errors;
 
-    private InputFile inputFile;
-    private SourceFile sourceFile;
     private String content = null;
 
-    public IkoraSourceCode(InputFile ikoraFile, SourceFile sourceFile) {
-        this.inputFile = ikoraFile;
+    public IkoraSourceCode(InputFile inputFile, SourceFile sourceFile, Errors errors) {
+        this.inputFile = inputFile;
         this.sourceFile = sourceFile;
+        this.errors = errors;
     }
 
     public void addViolation(IkoraIssue issue){
         this.ikoraIssues.add(issue);
-
-        if(issue.isSyntaxError() && syntaxError == null){
-            syntaxError = issue;
-        }
     }
 
     public SourceFile getSourceFile() {
@@ -45,15 +43,11 @@ public class IkoraSourceCode {
         return content;
     }
 
-    public boolean hasCorrectSyntax() {
-        return syntaxError == null;
+    public Errors getErrors() {
+        return errors;
     }
 
     public List<IkoraIssue> getIkoraIssues() {
         return ikoraIssues;
-    }
-
-    public IkoraIssue getSyntaxError() {
-        return syntaxError;
     }
 }
