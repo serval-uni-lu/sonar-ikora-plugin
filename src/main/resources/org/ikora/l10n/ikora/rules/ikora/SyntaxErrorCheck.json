@@ -1,5 +1,5 @@
 {
-  "title": "Syntax error",
+  "title": "Syntax of the language should be respected",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

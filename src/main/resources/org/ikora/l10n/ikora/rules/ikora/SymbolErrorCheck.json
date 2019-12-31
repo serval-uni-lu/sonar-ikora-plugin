@@ -1,5 +1,5 @@
 {
-  "title": "Symbol not resolved",
+  "title": "Symbols should all be defined",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
