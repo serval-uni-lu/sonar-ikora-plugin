@@ -1,0 +1,13 @@
+{
+  "title": "Keywords should have at least a one step",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "15min"
+  },
+  "tags": [
+    "suspicious"
+  ],
+  "defaultSeverity": "Blocker"
+}
