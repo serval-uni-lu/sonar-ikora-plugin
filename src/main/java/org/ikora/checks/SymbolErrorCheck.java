@@ -13,7 +13,7 @@ public class SymbolErrorCheck extends ParsingErrorCheck {
     @Override
     public void validate() {
         super.validate();
-        Set<LocalError> errors = new HashSet<>(ikoraSourceCode.getErrors().getSyntaxErrors());
+        Set<LocalError> errors = new HashSet<>(ikoraSourceCode.getErrors().getSymbolErrors());
         addViolations(errors);
     }
 }
