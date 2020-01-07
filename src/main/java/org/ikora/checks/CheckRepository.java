@@ -9,7 +9,8 @@ public class CheckRepository {
 
     private static final List<Class<? extends IkoraCheck>> CHECK_CLASSES = Arrays.asList(
             SyntaxErrorCheck.class,
-            SymbolErrorCheck.class
+            SymbolErrorCheck.class,
+            KeywordDocumentationCheck.class
     );
 
     public static List<Class<? extends IkoraCheck>> getCheckClasses(){

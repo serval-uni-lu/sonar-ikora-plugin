@@ -1,0 +1,13 @@
+{
+  "title": "Every user keyword is expected to have a documentation tag with a non empty documentation block",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "20min"
+  },
+  "tags": [
+    "suspicious"
+  ],
+  "defaultSeverity": "Major"
+}
