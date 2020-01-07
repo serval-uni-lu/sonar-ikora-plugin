@@ -4,7 +4,6 @@ import org.ikora.checks.CheckRepository;
 import org.ikora.checks.IkoraCheck;
 import org.ikora.checks.IkoraIssue;
 import org.ikora.error.Errors;
-import org.ikora.model.Project;
 import org.sonar.api.batch.fs.FilePredicate;
 import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
@@ -113,8 +112,6 @@ public class IkoraSensor implements Sensor {
     }
 
     private void runChecks(SensorContext context, IkoraSourceCode sourceCode){
-        LOG.info(String.format("Number of checks: %d", checks.all().size()));
-
         for(Object object: checks.all()){
             IkoraCheck check = (IkoraCheck)object;
 
@@ -129,6 +126,8 @@ public class IkoraSensor implements Sensor {
     }
 
     private void saveIssues(SensorContext context, IkoraSourceCode sourceCode){
+        LOG.debug(String.format("Issues found: %d", sourceCode.getIkoraIssues().size()));
+
         for(IkoraIssue issue: sourceCode.getIkoraIssues()){
             LOG.debug(String.format("Save issue: %s", issue.getMessage()));
 

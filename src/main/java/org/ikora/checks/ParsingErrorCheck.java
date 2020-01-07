@@ -11,7 +11,7 @@ public class ParsingErrorCheck extends IkoraLintCheck {
     private static final Logger LOG = Loggers.get(IkoraSensor.class);
 
     protected void addViolations(Set<LocalError> errors){
-        if(ikoraSourceCode.getErrors().isEmpty()){
+        if(errors.isEmpty()){
             return;
         }
 
