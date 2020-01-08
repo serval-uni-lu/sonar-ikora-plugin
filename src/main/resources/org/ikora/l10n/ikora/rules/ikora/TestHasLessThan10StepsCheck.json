@@ -1,0 +1,13 @@
+{
+  "title": "User keyword should not have too many arguments",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "25min"
+  },
+  "tags": [
+    "suspicious"
+  ],
+  "defaultSeverity": "Major"
+}

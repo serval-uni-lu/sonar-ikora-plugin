@@ -5,7 +5,6 @@ import org.ikora.checks.IkoraCheck;
 import org.ikora.checks.IkoraIssue;
 import org.ikora.error.Errors;
 import org.sonar.api.batch.fs.FilePredicate;
-import org.sonar.api.batch.fs.FileSystem;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.rule.CheckFactory;
 import org.sonar.api.batch.rule.Checks;
@@ -29,21 +28,13 @@ public class IkoraSensor implements Sensor {
     private static final Logger LOG = Loggers.get(IkoraSensor.class);
 
     private final Checks<Object> checks;
-    private final FileSystem fileSystem;
-    private final FilePredicate mainFilesPredicate;
     private final FileLinesContextFactory fileLinesContextFactory;
 
-    public IkoraSensor(FileSystem fileSystem, CheckFactory checkFactory, FileLinesContextFactory fileLinesContextFactory) {
-        this.fileSystem = fileSystem;
+    public IkoraSensor(CheckFactory checkFactory, FileLinesContextFactory fileLinesContextFactory) {
         this.fileLinesContextFactory = fileLinesContextFactory;
 
         this.checks = checkFactory.create(IkoraLanguage.REPOSITORY_KEY).addAnnotatedChecks(
                 (Iterable<?>) CheckRepository.getCheckClasses()
-        );
-
-        this.mainFilesPredicate = fileSystem.predicates().and(
-            fileSystem.predicates().hasType(InputFile.Type.MAIN),
-            fileSystem.predicates().hasLanguage(IkoraLanguage.KEY)
         );
     }
 
@@ -57,12 +48,8 @@ public class IkoraSensor implements Sensor {
 
     @Override
     public void execute(SensorContext context) {
-        List<InputFile> inputFiles = new ArrayList<>();
-        fileSystem.inputFiles(mainFilesPredicate).forEach(inputFiles::add);
-
-        if (inputFiles.isEmpty()) {
-            return;
-        }
+        List<InputFile> inputFiles = getInputFiles(context);
+        if (inputFiles.isEmpty()) return;
 
         final BuildResult result = buildProject(context);
 
@@ -85,21 +72,31 @@ public class IkoraSensor implements Sensor {
         }
     }
 
+    private List<InputFile> getInputFiles(SensorContext context) {
+        List<InputFile> inputFiles = new ArrayList<>();
+
+        FilePredicate mainFilesPredicate = context.fileSystem().predicates().and(
+                context.fileSystem().predicates().hasType(InputFile.Type.MAIN),
+                context.fileSystem().predicates().hasLanguage(IkoraLanguage.KEY)
+        );
+
+        context.fileSystem().inputFiles(mainFilesPredicate).forEach(inputFiles::add);
+
+        return inputFiles;
+    }
+
     private BuildResult buildProject(SensorContext context) {
         LOG.info("Start building projects...");
 
-        final BuildResult result = Builder.build(fileSystem.baseDir(), new Configuration(), true);
+        final BuildResult result = Builder.build(context.fileSystem().baseDir(), new Configuration(), true);
 
         LOG.info(String.format(
-                "Built in %d ms [parsing: %d ms; linking: %d ms]",
+                "Built projects in %d ms [parsing: %d ms; linking: %d ms]",
                 result.getBuildTime(),
                 result.getParsingTime(),
                 result.getLinkingTime()
         ));
 
-        if(!result.getErrors().isEmpty()){
-            LOG.warn("Detected errors while building");
-        }
         return result;
     }
 

@@ -13,7 +13,8 @@ public class CheckRepository {
             KeywordDocumentationCheck.class,
             KeywordHasMinimumOneStepCheck.class,
             MaximumNumberOfArgumentsCheck.class,
-            NoOperationCheck.class
+            NoOperationCheck.class,
+            TestHasLessThan10StepsCheck.class
     );
 
     public static List<Class<? extends IkoraCheck>> getCheckClasses(){

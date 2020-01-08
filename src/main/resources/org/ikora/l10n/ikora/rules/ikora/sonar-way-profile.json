@@ -6,6 +6,7 @@
     "KeywordDocumentationCheck",
     "KeywordHasMinimumOneStepCheck",
     "MaximumNumberOfArgumentsCheck",
-    "NoOperationCheck"
+    "NoOperationCheck",
+    "TestHasLessThan10StepsCheck"
   ]
 }
