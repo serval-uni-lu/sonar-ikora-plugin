@@ -8,6 +8,7 @@
     "MaximumNumberOfArgumentsCheck",
     "NoOperationCheck",
     "TestHasLessThan10StepsCheck",
-    "DocumentationDifferentThanNameCheck"
+    "DocumentationDifferentThanNameCheck",
+    "SleepCheck"
   ]
 }

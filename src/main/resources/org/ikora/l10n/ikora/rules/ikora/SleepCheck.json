@@ -1,0 +1,13 @@
+{
+  "title": "Sleep should be avoided in production",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "20min"
+  },
+  "tags": [
+    "suspicious"
+  ],
+  "defaultSeverity": "Minor"
+}
