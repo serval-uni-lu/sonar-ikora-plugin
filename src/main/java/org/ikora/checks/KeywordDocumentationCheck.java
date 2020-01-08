@@ -18,7 +18,7 @@ public class KeywordDocumentationCheck extends IkoraLintCheck {
 
         for(UserKeyword keyword: sourceFile.getUserKeywords()){
             if(keyword.getDocumentation().isEmpty()){
-                LOG.info(String.format("Add missing documentation issue for '%s'", keyword.getName()));
+                LOG.debug(String.format("Add missing documentation issue for '%s'", keyword.getName()));
 
                 IkoraIssue issue = new IkoraIssue(ruleKey,
                         "Missing documentation",

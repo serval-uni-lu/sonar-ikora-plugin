@@ -16,7 +16,7 @@ public class ParsingErrorCheck extends IkoraLintCheck {
         }
 
         for(LocalError error: errors){
-            LOG.info(String.format("Add error: %s", error.getMessage()));
+            LOG.debug(String.format("Add error: %s", error.getMessage()));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     error.getMessage(),

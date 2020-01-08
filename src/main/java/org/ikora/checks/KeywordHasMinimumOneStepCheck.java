@@ -16,6 +16,8 @@ public class KeywordHasMinimumOneStepCheck extends IkoraLintCheck {
 
     @Override
     public void validate() {
+        super.validate();
+
         SourceFile sourceFile = ikoraSourceCode.getSourceFile();
 
         for(TestCase testCase: sourceFile.getTestCases()){
@@ -29,7 +31,7 @@ public class KeywordHasMinimumOneStepCheck extends IkoraLintCheck {
 
     private void checkNumberStep(KeywordDefinition keyword){
         if(keyword.getSteps().isEmpty()){
-            LOG.info(String.format("Add missing steps issue for '%s'", keyword.getName()));
+            LOG.debug(String.format("Add missing steps issue for '%s'", keyword.getName()));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     "Keyword definition needs to have at least one step",

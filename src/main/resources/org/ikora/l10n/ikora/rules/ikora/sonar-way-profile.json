@@ -4,6 +4,7 @@
     "SyntaxErrorCheck",
     "SymbolErrorCheck",
     "KeywordDocumentationCheck",
-    "KeywordHasMinimumOneStepCheck"
+    "KeywordHasMinimumOneStepCheck",
+    "MaximumNumberOfArgumentsCheck"
   ]
 }
