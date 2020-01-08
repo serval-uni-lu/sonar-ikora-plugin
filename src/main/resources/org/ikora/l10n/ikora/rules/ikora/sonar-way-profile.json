@@ -5,6 +5,7 @@
     "SymbolErrorCheck",
     "KeywordDocumentationCheck",
     "KeywordHasMinimumOneStepCheck",
-    "MaximumNumberOfArgumentsCheck"
+    "MaximumNumberOfArgumentsCheck",
+    "NoOperationCheck"
   ]
 }
