@@ -16,7 +16,8 @@ public class CheckRepository {
             NoOperationCheck.class,
             TestHasLessThan10StepsCheck.class,
             DocumentationDifferentThanNameCheck.class,
-            SleepCheck.class
+            SleepCheck.class,
+            TestCaseHasMinimumNumberOfSteps.class
     );
 
     public static List<Class<? extends IkoraCheck>> getCheckClasses(){
