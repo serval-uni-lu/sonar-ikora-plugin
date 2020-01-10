@@ -1,0 +1,13 @@
+{
+  "title": "Control flow operation should be avoided in test cases",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "40min"
+  },
+  "tags": [
+    "suspicious"
+  ],
+  "defaultSeverity": "Critical"
+}

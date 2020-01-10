@@ -10,6 +10,7 @@
     "TestHasLessThan10StepsCheck",
     "DocumentationDifferentThanNameCheck",
     "SleepCheck",
-    "TestCaseHasMinimumNumberOfSteps"
+    "TestCaseHasMinimumNumberOfSteps",
+    "NoLogicInTestCaseCheck"
   ]
 }
