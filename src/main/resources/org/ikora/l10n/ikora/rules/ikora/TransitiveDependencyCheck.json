@@ -1,0 +1,13 @@
+{
+  "title": "Dependencies should be direct",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "25min"
+  },
+  "tags": [
+    "suspicious"
+  ],
+  "defaultSeverity": "Minor"
+}

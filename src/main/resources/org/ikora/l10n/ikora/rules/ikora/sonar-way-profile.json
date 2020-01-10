@@ -11,6 +11,7 @@
     "DocumentationDifferentThanNameCheck",
     "SleepCheck",
     "TestCaseHasMinimumNumberOfSteps",
-    "NoLogicInTestCaseCheck"
+    "NoLogicInTestCaseCheck",
+    "TransitiveDependencyCheck"
   ]
 }
