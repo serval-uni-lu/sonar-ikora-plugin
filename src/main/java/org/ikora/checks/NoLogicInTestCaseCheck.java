@@ -29,7 +29,7 @@ public class NoLogicInTestCaseCheck extends IkoraLintCheck {
             Optional<Keyword> keyword = step.getKeywordCall().flatMap(KeywordCall::getKeyword);
             boolean isControlFlow = keyword.isPresent() && keyword.get().getType() == Keyword.Type.CONTROL_FLOW;
 
-            if(isControlFlow || step instanceof ForLoop){
+            if(isControlFlow || (step instanceof ForLoop && !testCase.hasTemplate())){
                 LOG.debug(String.format("Add issue no logic steps allowed in '%s'", testCase.getName()));
 
                 IkoraIssue issue = new IkoraIssue(ruleKey,
