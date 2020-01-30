@@ -6,6 +6,7 @@ import org.ikora.model.Step;
 import org.ikora.model.UserKeyword;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.measures.CoreMetrics;
+import org.sonar.api.measures.FileLinesContext;
 import org.sonar.api.measures.FileLinesContextFactory;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
@@ -28,6 +29,10 @@ public class FunctionCounter {
 
         MetricUtils.saveMeasure(context, sourceCode.getInputFile(), CoreMetrics.FUNCTIONS, functions.size());
         MetricUtils.saveMeasure(context, sourceCode.getInputFile(), CoreMetrics.STATEMENTS, statements.size());
+
+        FileLinesContext fileLinesContext = fileLinesContextFactory.createFor(sourceCode.getInputFile());
+        statements.forEach(statement -> fileLinesContext.setIntValue(CoreMetrics.EXECUTABLE_LINES_DATA_KEY, statement, 1));
+        fileLinesContext.save();
     }
 
     private static void analyzeFunctions(SourceFile sourceFile, Set<Integer> functions, Set<Integer> statements) {
@@ -41,7 +46,7 @@ public class FunctionCounter {
     }
 
     private static void analyzeSteps(Step step, Set<Integer> statements){
-        statements.add(step.getName().getLine());
+        statements.add(step.getPosition().getStartMark().getLine());
 
         for(Step step1: step.getSteps()){
             analyzeSteps(step1, statements);
