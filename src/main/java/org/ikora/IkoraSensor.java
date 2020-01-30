@@ -4,6 +4,8 @@ import org.ikora.checks.CheckRepository;
 import org.ikora.checks.IkoraCheck;
 import org.ikora.checks.IkoraIssue;
 import org.ikora.error.Errors;
+import org.ikora.metrics.FunctionCounter;
+import org.ikora.metrics.LineCounter;
 import org.sonar.api.batch.fs.FilePredicate;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.rule.CheckFactory;
@@ -66,7 +68,7 @@ public class IkoraSensor implements Sensor {
             Errors errors = result.getErrors().in(sourceFile.getFile());
             IkoraSourceCode sourceCode = new IkoraSourceCode(inputFile, sourceFile, errors);
 
-            computeLineMeasures(context, sourceCode);
+            computeMetrics(context, sourceCode);
             saveSyntaxHighlighting(context, sourceCode);
             runChecks(context, sourceCode);
         }
@@ -100,8 +102,9 @@ public class IkoraSensor implements Sensor {
         return result;
     }
 
-    private void computeLineMeasures(SensorContext context, IkoraSourceCode sourceCode) {
+    private void computeMetrics(SensorContext context, IkoraSourceCode sourceCode) {
         LineCounter.analyse(context, fileLinesContextFactory, sourceCode);
+        FunctionCounter.analyse(context, fileLinesContextFactory, sourceCode);
     }
 
     private void saveSyntaxHighlighting(SensorContext context, IkoraSourceCode sourceCode) {

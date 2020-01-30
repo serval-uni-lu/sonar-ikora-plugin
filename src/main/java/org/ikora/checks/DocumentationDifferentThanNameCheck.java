@@ -30,7 +30,7 @@ public class DocumentationDifferentThanNameCheck extends IkoraLintCheck{
     }
 
     private void checkDocumentation(KeywordDefinition keyword) {
-        String name = keyword.getName();
+        String name = keyword.getName().getValue();
         String documentation = keyword.getDocumentation();
 
         if(name.equalsIgnoreCase(documentation)){
