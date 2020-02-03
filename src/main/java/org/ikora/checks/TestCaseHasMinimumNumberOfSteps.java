@@ -25,7 +25,7 @@ public class TestCaseHasMinimumNumberOfSteps extends IkoraLintCheck {
 
     private void checkNumberStep(TestCase testCase){
         if(testCase.getSteps().size() < 2){
-            LOG.debug(String.format("Add missing steps issue for '%s'", testCase.getName()));
+            LOG.debug(String.format("Add missing steps issue for '%s'", testCase.toString()));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     "Test case needs to have at least two steps",

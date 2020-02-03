@@ -25,7 +25,7 @@ public class TestHasLessThan10StepsCheck extends IkoraLintCheck {
 
     private void checkNumberStep(TestCase testCase) {
         if(testCase.getSteps().size() > 10){
-            LOG.debug(String.format("Add too many steps issue for test case '%s'", testCase.getName()));
+            LOG.debug(String.format("Add too many steps issue for test case '%s'", testCase.toString()));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     "Test case should have less than 10 steps",

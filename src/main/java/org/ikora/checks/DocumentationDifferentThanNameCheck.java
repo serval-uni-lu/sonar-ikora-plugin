@@ -30,11 +30,11 @@ public class DocumentationDifferentThanNameCheck extends IkoraLintCheck{
     }
 
     private void checkDocumentation(KeywordDefinition keyword) {
-        String name = keyword.getName().getValue();
+        String name = keyword.toString();
         String documentation = keyword.getDocumentation();
 
         if(name.equalsIgnoreCase(documentation)){
-            LOG.debug(String.format("Add documentation same as name issue for '%s'", keyword.getName()));
+            LOG.debug(String.format("Add documentation same as name issue for '%s'", keyword.toString()));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     "Documentation should not be the same as the name",

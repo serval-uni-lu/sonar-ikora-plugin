@@ -30,7 +30,7 @@ public class NoLogicInTestCaseCheck extends IkoraLintCheck {
             boolean isControlFlow = keyword.isPresent() && keyword.get().getType() == Keyword.Type.CONTROL_FLOW;
 
             if(isControlFlow || (step instanceof ForLoop && !testCase.hasTemplate())){
-                LOG.debug(String.format("Add issue no logic steps allowed in '%s'", testCase.getName()));
+                LOG.debug(String.format("Add issue no logic steps allowed in '%s'", testCase.toString()));
 
                 IkoraIssue issue = new IkoraIssue(ruleKey,
                         "No control flow operation should be present in a test case",

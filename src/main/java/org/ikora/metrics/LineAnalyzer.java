@@ -13,10 +13,10 @@ import org.sonar.api.utils.log.Loggers;
 import java.util.HashSet;
 import java.util.Set;
 
-public class LineCounter {
-    private static final Logger LOGGER = Loggers.get(LineCounter.class);
+public class LineAnalyzer {
+    private static final Logger LOGGER = Loggers.get(LineAnalyzer.class);
 
-    private LineCounter(){}
+    private LineAnalyzer(){}
 
     public static void analyse(SensorContext context, FileLinesContextFactory fileLinesContextFactory, IkoraSourceCode sourceCode){
         LOGGER.debug(String.format("Get lines in %s", sourceCode.getInputFile().filename()));

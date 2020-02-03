@@ -5,17 +5,17 @@ import org.sonar.api.config.PropertyDefinition;
 import org.sonar.api.resources.Qualifiers;
 
 public final class IkoraPlugin implements Plugin {
-    public static final String FILE_SUFFIXES_KEY = "sonar.ikora.file.suffixes";
 
     @Override
     public void define(Context context) {
         context.addExtensions(
-                PropertyDefinition.builder(IkoraPlugin.FILE_SUFFIXES_KEY)
+                PropertyDefinition.builder(IkoraLanguage.FILE_SUFFIXES_KEY)
                         .name("File suffixes")
                         .description("Comma-separated list of suffixes for files to analyze.")
                         .defaultValue(".robot")
                         .multiValues(true)
                         .category("Ikora")
+                        .subCategory("General")
                         .onQualifiers(Qualifiers.PROJECT)
                         .build(),
                 IkoraLanguage.class,

@@ -23,7 +23,7 @@ public class TransitiveDependencyCheck extends IkoraLintCheck {
         List<Violation> violations = ViolationDetection.detect(sourceFile, Violation.Cause.TRANSITIVE_DEPENDENCY);
 
         for(Violation violation: violations){
-            LOG.debug(String.format("Add transitive dependency issue for '%s'", violation.getNode().getName()));
+            LOG.debug(String.format("Add transitive dependency issue for '%s'", violation.getNode().toString()));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     "Definition should not rely on indirect dependency",

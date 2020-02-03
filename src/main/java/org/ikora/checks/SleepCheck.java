@@ -31,7 +31,7 @@ public class SleepCheck extends IkoraLintCheck {
         for(Step step: keyword.getSteps()){
             step.getKeywordCall().flatMap(KeywordCall::getKeyword).ifPresent(k -> {
                 if(k instanceof Sleep){
-                    LOG.debug(String.format("Add issue 'sleep' found in '%s'", keyword.getName()));
+                    LOG.debug(String.format("Add issue 'sleep' found in '%s'", keyword.toString()));
 
                     IkoraIssue issue = new IkoraIssue(ruleKey,
                             "Sleep keyword should be avoided in production",

@@ -11,6 +11,7 @@ public class IkoraLanguage extends AbstractLanguage {
     public static final String KEY = "ikora";
     public static final String REPOSITORY_KEY = "ikora";
     public static final String REPOSITORY_NAME = "SonarAnalyzer";
+    public static final String FILE_SUFFIXES_KEY = "sonar.ikora.file.suffixes";
 
     private static final String[] DEFAULT_SUFFIXES = {".robot"};
     private static final String IKORA_LANGUAGE_NAME = "Robot Framework";
@@ -29,7 +30,7 @@ public class IkoraLanguage extends AbstractLanguage {
 
     @Override
     public String[] getFileSuffixes() {
-        String[] suffixes = filterEmptyStrings(configuration.getStringArray(IkoraPlugin.FILE_SUFFIXES_KEY));
+        String[] suffixes = filterEmptyStrings(configuration.getStringArray(IkoraLanguage.FILE_SUFFIXES_KEY));
 
         if (suffixes.length == 0) {
             suffixes = IkoraLanguage.DEFAULT_SUFFIXES;

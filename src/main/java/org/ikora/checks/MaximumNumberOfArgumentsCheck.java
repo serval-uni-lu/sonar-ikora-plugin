@@ -25,7 +25,7 @@ public class MaximumNumberOfArgumentsCheck extends IkoraLintCheck {
 
     private void checkNumberOfArguments(UserKeyword userKeyword) {
         if(userKeyword.getParameters().size() > 4){
-            LOG.debug(String.format("Add too many arguments issue for '%s'", userKeyword.getName()));
+            LOG.debug(String.format("Add too many arguments issue for '%s'", userKeyword.toString()));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     "User keyword should have a maximum of 4 arguments",

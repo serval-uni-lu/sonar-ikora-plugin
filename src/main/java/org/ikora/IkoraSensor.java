@@ -4,8 +4,9 @@ import org.ikora.checks.CheckRepository;
 import org.ikora.checks.IkoraCheck;
 import org.ikora.checks.IkoraIssue;
 import org.ikora.error.Errors;
-import org.ikora.metrics.FunctionCounter;
-import org.ikora.metrics.LineCounter;
+import org.ikora.metrics.CpdAnalyzer;
+import org.ikora.metrics.FunctionAnalyzer;
+import org.ikora.metrics.LineAnalyzer;
 import org.sonar.api.batch.fs.FilePredicate;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.batch.rule.CheckFactory;
@@ -103,8 +104,9 @@ public class IkoraSensor implements Sensor {
     }
 
     private void computeMetrics(SensorContext context, IkoraSourceCode sourceCode) {
-        LineCounter.analyse(context, fileLinesContextFactory, sourceCode);
-        FunctionCounter.analyse(context, fileLinesContextFactory, sourceCode);
+        LineAnalyzer.analyse(context, fileLinesContextFactory, sourceCode);
+        FunctionAnalyzer.analyse(context, sourceCode);
+        CpdAnalyzer.analyse(context, sourceCode);
     }
 
     private void saveSyntaxHighlighting(SensorContext context, IkoraSourceCode sourceCode) {

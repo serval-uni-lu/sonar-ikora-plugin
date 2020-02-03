@@ -31,7 +31,7 @@ public class NoOperationCheck extends IkoraLintCheck {
         for(Step step: keyword.getSteps()){
             step.getKeywordCall().flatMap(KeywordCall::getKeyword).ifPresent(k -> {
                 if(k instanceof NoOperation){
-                    LOG.debug(String.format("Add issue no operation found in '%s'", keyword.getName()));
+                    LOG.debug(String.format("Add issue no operation found in '%s'", keyword.toString()));
 
                     IkoraIssue issue = new IkoraIssue(ruleKey,
                             "No operation keyword should be avoided in production",

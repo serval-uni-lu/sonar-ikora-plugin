@@ -2,6 +2,8 @@ package org.ikora.checks;
 
 import org.sonar.api.rule.RuleKey;
 
+import java.io.StringReader;
+
 public class IkoraIssue {
     protected final RuleKey ruleKey;
     protected boolean syntaxError;
@@ -43,5 +45,10 @@ public class IkoraIssue {
 
     public String getMessage() {
         return message;
+    }
+
+    @Override
+    public String toString() {
+        return "[" + this.line + ":" + this.column + "] " + ruleKey.rule() + ": " + this.message;
     }
 }

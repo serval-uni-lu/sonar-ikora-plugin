@@ -4,12 +4,16 @@ import org.ikora.checks.IkoraIssue;
 import org.ikora.error.Errors;
 import org.ikora.model.SourceFile;
 import org.sonar.api.batch.fs.InputFile;
+import org.sonar.api.utils.log.Logger;
+import org.sonar.api.utils.log.Loggers;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class IkoraSourceCode {
+    private static final Logger LOG = Loggers.get(IkoraSourceCode.class);
+
     private final List<IkoraIssue> ikoraIssues = new ArrayList<>();
     private final InputFile inputFile;
     private final SourceFile sourceFile;
@@ -24,6 +28,11 @@ public class IkoraSourceCode {
     }
 
     public void addViolation(IkoraIssue issue){
+        if(issue.getLine() < 0 || issue.getColumn() < 0){
+            LOG.warn(String.format("Failed to add issue in file %s :: %s", this.inputFile.filename(), issue.toString()));
+            return;
+        }
+
         this.ikoraIssues.add(issue);
     }
 
