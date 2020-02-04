@@ -1,5 +1,6 @@
 package org.ikora.checks;
 
+import org.ikora.IkoraLanguage;
 import org.ikora.model.SourceFile;
 import org.ikora.model.UserKeyword;
 import org.sonar.api.utils.log.Logger;
@@ -24,7 +25,9 @@ public class MaximumNumberOfArgumentsCheck extends IkoraLintCheck {
     }
 
     private void checkNumberOfArguments(UserKeyword userKeyword) {
-        if(userKeyword.getParameters().size() > 4){
+        int maxArgs = getInt(IkoraLanguage.MAXIMUM_NUMBER_ARGS, 4);
+
+        if(userKeyword.getParameters().size() > maxArgs){
             LOG.debug(String.format("Add too many arguments issue for '%s'", userKeyword.toString()));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,

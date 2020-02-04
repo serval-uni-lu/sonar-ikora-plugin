@@ -1,5 +1,6 @@
 package org.ikora.checks;
 
+import org.ikora.IkoraLanguage;
 import org.ikora.model.SourceFile;
 import org.ikora.model.TestCase;
 import org.sonar.api.utils.log.Logger;
@@ -24,7 +25,9 @@ public class TestCaseHasMinimumNumberOfSteps extends IkoraLintCheck {
     }
 
     private void checkNumberStep(TestCase testCase){
-        if(testCase.getSteps().size() < 2){
+        int minSteps = getInt(IkoraLanguage.MAXIMUM_NUMBER_ARGS, 3);
+
+        if(testCase.getSteps().size() < minSteps){
             LOG.debug(String.format("Add missing steps issue for '%s'", testCase.toString()));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,

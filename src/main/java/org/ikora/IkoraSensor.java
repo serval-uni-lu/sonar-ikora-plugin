@@ -119,6 +119,7 @@ public class IkoraSensor implements Sensor {
 
             check.setRuleKey(checks.ruleKey(check));
             check.setIkoraSourceCode(sourceCode);
+            check.setContext(context);
 
             LOG.debug(String.format("Checking rule: %s", check.getRuleKey()));
             check.validate();

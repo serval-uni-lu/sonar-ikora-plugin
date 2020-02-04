@@ -13,6 +13,8 @@ public class IkoraLanguage extends AbstractLanguage {
     public static final String REPOSITORY_NAME = "SonarAnalyzer";
 
     public static final String FILE_SUFFIXES_KEY = "sonar.ikora.file.suffixes";
+    public static final String MAXIMUM_NUMBER_ARGS = "sonar.ikora.max.args";
+    public static final String MAXIMUM_NUMBER_TEST_STEPS = "sonar.ikora.test.steps";
 
     private static final String[] DEFAULT_SUFFIXES = {".robot"};
     private static final String IKORA_LANGUAGE_NAME = "Robot Framework";
