@@ -12,6 +12,7 @@
     "SleepCheck",
     "TestCaseHasMinimumNumberOfSteps",
     "NoLogicInTestCaseCheck",
-    "TransitiveDependencyCheck"
+    "TransitiveDependencyCheck",
+    "TestCaseWithPeriodCheck"
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "title": "Test case should have at least minimum number of steps",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "10min"
+  },
+  "tags": [
+    "suspicious"
+  ],
+  "defaultSeverity": "Critical"
+}
