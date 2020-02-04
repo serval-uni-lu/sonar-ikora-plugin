@@ -1,6 +1,7 @@
 package org.ikora;
 
 import org.sonar.api.Plugin;
+import org.sonar.api.PropertyType;
 import org.sonar.api.config.PropertyDefinition;
 import org.sonar.api.resources.Qualifiers;
 
@@ -16,6 +17,16 @@ public final class IkoraPlugin implements Plugin {
                         .multiValues(true)
                         .category("Ikora")
                         .subCategory("General")
+                        .onQualifiers(Qualifiers.PROJECT)
+                        .build(),
+                PropertyDefinition.builder("sonar.cpd." + IkoraLanguage.KEY + ".minimumLines")
+                        .type(PropertyType.INTEGER)
+                        .defaultValue("3")
+                        .onQualifiers(Qualifiers.PROJECT)
+                        .build(),
+                PropertyDefinition.builder("sonar.cpd." + IkoraLanguage.KEY + ".minimumTokens")
+                        .type(PropertyType.INTEGER)
+                        .defaultValue("5")
                         .onQualifiers(Qualifiers.PROJECT)
                         .build(),
                 IkoraLanguage.class,
