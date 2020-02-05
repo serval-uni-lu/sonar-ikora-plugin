@@ -1,0 +1,19 @@
+{
+  "name": "Sonar way",
+  "ruleKeys": [
+    "SyntaxErrorCheck",
+    "SymbolErrorCheck",
+    "KeywordDocumentationCheck",
+    "KeywordHasMinimumOneStepCheck",
+    "MaximumNumberOfArgumentsCheck",
+    "NoOperationCheck",
+    "TestHasLessThan10StepsCheck",
+    "DocumentationDifferentThanNameCheck",
+    "SleepCheck",
+    "TestCaseHasMinimumNumberOfSteps",
+    "NoLogicInTestCaseCheck",
+    "TransitiveDependencyCheck",
+    "TestCaseWithPeriodCheck",
+    "SpacesInTagsCheck"
+  ]
+}
