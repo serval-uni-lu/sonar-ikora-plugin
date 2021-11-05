@@ -25,8 +25,6 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <sonar.apiVersion>7.9</sonar.apiVersion>
-        <sonar.analyzerCommons.version>1.11.0.541</sonar.analyzerCommons.version>
         <maven.min.version>3.6.0</maven.min.version>
         <jdk.min.version>1.8</jdk.min.version>
     </properties>
@@ -38,41 +36,6 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.sonarsource.sonarqube</groupId>
-            <artifactId>sonar-plugin-api</artifactId>
-            <version>${sonar.apiVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.sonarsource.analyzer-commons</groupId>
-            <artifactId>sonar-analyzer-commons</artifactId>
-            <version>${sonar.analyzerCommons.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>tech.ikora</groupId>
-            <artifactId>ikora-core</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.6.0</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>3.15.0</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
@@ -118,7 +81,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <pluginKey>ikora</pluginKey>
-                    <pluginClass>tech.ikora.IkoraPlugin</pluginClass>
+                    <pluginClass>lu.uni.serval.ikora.sonar.IkoraPlugin</pluginClass>
                 </configuration>
             </plugin>
 
@@ -134,4 +97,32 @@
             </plugin>
         </plugins>
     </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.sonarsource.sonarqube</groupId>
+            <artifactId>sonar-plugin-api</artifactId>
+            <version>9.0.1.46107</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.sonarsource.analyzer-commons</groupId>
+            <artifactId>sonar-analyzer-commons</artifactId>
+            <version>1.18.0.756</version>
+        </dependency>
+
+        <dependency>
+            <groupId>lu.uni.serval</groupId>
+            <artifactId>ikora-smells</artifactId>
+            <version>0.1.11-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
