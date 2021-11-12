@@ -19,7 +19,7 @@ public class IkoraLanguage extends AbstractLanguage {
     private static final String[] DEFAULT_SUFFIXES = {".robot"};
     private static final String IKORA_LANGUAGE_NAME = "Robot Framework";
 
-    public static final String IKORA_RESOURCE_PATH = "org/ikora/l10n/ikora/rules/ikora";
+    public static final String IKORA_RESOURCE_PATH = "lu/uni/serval/ikora/sonar/I10n/ikora/rules/ikora";
     public static final String SONAR_WAY_PROFILE_NAME = "Sonar way";
     public static final String SONAR_WAY_PATH = IKORA_RESOURCE_PATH + "/sonar-way-profile.json";
 
