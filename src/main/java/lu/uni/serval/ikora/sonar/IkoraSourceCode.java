@@ -2,7 +2,7 @@ package lu.uni.serval.ikora.sonar;
 
 import lu.uni.serval.ikora.core.error.Errors;
 import lu.uni.serval.ikora.core.model.SourceFile;
-import lu.uni.serval.ikora.sonar.checks.IkoraIssue;
+import lu.uni.serval.ikora.sonar.rules.IkoraIssue;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;

@@ -1,4 +1,4 @@
-package lu.uni.serval.ikora.sonar.checks;
+package lu.uni.serval.ikora.sonar.rules;
 
 import org.sonar.api.rule.RuleKey;
 

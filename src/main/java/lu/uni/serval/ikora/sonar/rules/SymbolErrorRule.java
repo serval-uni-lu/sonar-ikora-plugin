@@ -1,4 +1,4 @@
-package lu.uni.serval.ikora.sonar.checks;
+package lu.uni.serval.ikora.sonar.rules;
 
 import lu.uni.serval.ikora.core.error.LocalError;
 import org.sonar.check.Rule;
@@ -6,8 +6,8 @@ import org.sonar.check.Rule;
 import java.util.HashSet;
 import java.util.Set;
 
-@Rule(key = SymbolErrorCheck.RULE_KEY)
-public class SymbolErrorCheck extends ParsingErrorCheck {
+@Rule(key = SymbolErrorRule.RULE_KEY)
+public class SymbolErrorRule extends ParsingErrorRule {
     public static final String RULE_KEY = "SymbolErrorCheck";
 
     @Override

@@ -1,4 +1,4 @@
-package lu.uni.serval.ikora.sonar.checks;
+package lu.uni.serval.ikora.sonar.rules;
 
 import lu.uni.serval.ikora.core.model.SourceFile;
 import lu.uni.serval.ikora.core.model.TestCase;
@@ -6,11 +6,11 @@ import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonar.check.Rule;
 
-@Rule(key = TestCaseWithPeriodCheck.RULE_KEY)
-public class TestCaseWithPeriodCheck extends IkoraLintCheck {
-    public static final String RULE_KEY = "TestCaseWithPeriodCheck";
+@Rule(key = TestHasLessThan10StepsRule.RULE_KEY)
+public class TestHasLessThan10StepsRule extends IkoraLintRule {
+    public static final String RULE_KEY = "TestHasLessThan10StepsCheck";
 
-    private static final Logger LOG = Loggers.get(TestCaseWithPeriodCheck.class);
+    private static final Logger LOG = Loggers.get(TestHasLessThan10StepsRule.class);
 
     @Override
     public void validate() {
@@ -19,16 +19,16 @@ public class TestCaseWithPeriodCheck extends IkoraLintCheck {
         SourceFile sourceFile = ikoraSourceCode.getSourceFile();
 
         for(TestCase testCase: sourceFile.getTestCases()){
-            checkName(testCase);
+            checkNumberStep(testCase);
         }
     }
 
-    private void checkName(TestCase testCase) {
-        if(testCase.getName().contains(".")){
-            LOG.debug(String.format("Add period in name issue for test case '%s'", testCase.toString()));
+    private void checkNumberStep(TestCase testCase) {
+        if(testCase.getSteps().size() > 10){
+            LOG.debug(String.format("Add too many steps issue for test case '%s'", testCase));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
-                    "Test case name should not contain periods",
+                    "Test case should have less than 10 steps",
                     testCase.getNameToken().getLine(),
                     testCase.getNameToken().getStartOffset());
 

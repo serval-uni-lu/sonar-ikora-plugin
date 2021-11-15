@@ -1,10 +1,10 @@
-package lu.uni.serval.ikora.sonar.checks;
+package lu.uni.serval.ikora.sonar.rules;
 
 import lu.uni.serval.ikora.sonar.IkoraSourceCode;
 import org.sonar.api.batch.sensor.SensorContext;
 import org.sonar.api.rule.RuleKey;
 
-public abstract class IkoraCheck {
+public abstract class IkoraRule {
     protected RuleKey ruleKey = null;
     protected IkoraSourceCode ikoraSourceCode = null;
     private SensorContext context = null;

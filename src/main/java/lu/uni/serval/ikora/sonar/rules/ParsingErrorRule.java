@@ -1,4 +1,4 @@
-package lu.uni.serval.ikora.sonar.checks;
+package lu.uni.serval.ikora.sonar.rules;
 
 import lu.uni.serval.ikora.core.error.LocalError;
 import org.sonar.api.utils.log.Logger;
@@ -6,8 +6,8 @@ import org.sonar.api.utils.log.Loggers;
 
 import java.util.Set;
 
-public class ParsingErrorCheck extends IkoraLintCheck {
-    private static final Logger LOG = Loggers.get(ParsingErrorCheck.class);
+public class ParsingErrorRule extends IkoraLintRule {
+    private static final Logger LOG = Loggers.get(ParsingErrorRule.class);
 
     protected void addViolations(Set<LocalError> errors){
         if(errors.isEmpty()){

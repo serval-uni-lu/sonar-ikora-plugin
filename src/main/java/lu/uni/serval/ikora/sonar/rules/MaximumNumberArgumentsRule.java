@@ -1,4 +1,4 @@
-package lu.uni.serval.ikora.sonar.checks;
+package lu.uni.serval.ikora.sonar.rules;
 
 import lu.uni.serval.ikora.core.model.SourceFile;
 import lu.uni.serval.ikora.core.model.UserKeyword;
@@ -7,11 +7,11 @@ import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonar.check.Rule;
 
-@Rule(key = MaximumNumberOfArgumentsCheck.RULE_KEY)
-public class MaximumNumberOfArgumentsCheck extends IkoraLintCheck {
-    public static final String RULE_KEY = "MaximumNumberOfArgumentsCheck";
+@Rule(key = MaximumNumberArgumentsRule.RULE_KEY)
+public class MaximumNumberArgumentsRule extends IkoraLintRule {
+    public static final String RULE_KEY = "maximum-number-arguments-rule";
 
-    private static final Logger LOG = Loggers.get(MaximumNumberOfArgumentsCheck.class);
+    private static final Logger LOG = Loggers.get(MaximumNumberArgumentsRule.class);
 
     @Override
     public void validate() {

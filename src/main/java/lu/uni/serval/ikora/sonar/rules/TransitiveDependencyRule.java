@@ -1,4 +1,4 @@
-package lu.uni.serval.ikora.sonar.checks;
+package lu.uni.serval.ikora.sonar.rules;
 
 import lu.uni.serval.ikora.core.analytics.violations.Violation;
 import lu.uni.serval.ikora.core.analytics.violations.ViolationDetection;
@@ -9,11 +9,11 @@ import org.sonar.check.Rule;
 
 import java.util.List;
 
-@Rule(key = TransitiveDependencyCheck.RULE_KEY)
-public class TransitiveDependencyCheck extends IkoraLintCheck {
+@Rule(key = TransitiveDependencyRule.RULE_KEY)
+public class TransitiveDependencyRule extends IkoraLintRule {
     public static final String RULE_KEY = "TransitiveDependencyCheck";
 
-    private static final Logger LOG = Loggers.get(TransitiveDependencyCheck.class);
+    private static final Logger LOG = Loggers.get(TransitiveDependencyRule.class);
 
     @Override
     public void validate() {

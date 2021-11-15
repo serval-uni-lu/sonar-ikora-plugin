@@ -1,15 +1,15 @@
-package lu.uni.serval.ikora.sonar.checks;
+package lu.uni.serval.ikora.sonar.rules;
 
 import lu.uni.serval.ikora.core.model.*;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonar.check.Rule;
 
-@Rule(key = SpacesInTagsCheck.RULE_KEY)
-public class SpacesInTagsCheck extends IkoraLintCheck {
+@Rule(key = SpacesInTagsRule.RULE_KEY)
+public class SpacesInTagsRule extends IkoraLintRule {
     public static final String RULE_KEY = "SpacesInTagsCheck";
 
-    private static final Logger LOG = Loggers.get(SpacesInTagsCheck.class);
+    private static final Logger LOG = Loggers.get(SpacesInTagsRule.class);
 
     @Override
     public void validate() {

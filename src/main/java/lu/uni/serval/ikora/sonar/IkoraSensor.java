@@ -5,9 +5,9 @@ import lu.uni.serval.ikora.core.builder.BuildResult;
 import lu.uni.serval.ikora.core.builder.Builder;
 import lu.uni.serval.ikora.core.error.Errors;
 import lu.uni.serval.ikora.core.model.SourceFile;
-import lu.uni.serval.ikora.sonar.checks.CheckRepository;
-import lu.uni.serval.ikora.sonar.checks.IkoraCheck;
-import lu.uni.serval.ikora.sonar.checks.IkoraIssue;
+import lu.uni.serval.ikora.sonar.rules.RulesRepository;
+import lu.uni.serval.ikora.sonar.rules.IkoraRule;
+import lu.uni.serval.ikora.sonar.rules.IkoraIssue;
 import lu.uni.serval.ikora.sonar.metrics.CpdAnalyzer;
 import lu.uni.serval.ikora.sonar.metrics.FunctionAnalyzer;
 import lu.uni.serval.ikora.sonar.metrics.LineAnalyzer;
@@ -38,7 +38,7 @@ public class IkoraSensor implements Sensor {
 
         this.checks = checkFactory
                 .create(IkoraLanguage.REPOSITORY_KEY)
-                .addAnnotatedChecks(CheckRepository.getCheckClasses());
+                .addAnnotatedChecks(RulesRepository.getRuleClasses());
     }
 
 
@@ -115,7 +115,7 @@ public class IkoraSensor implements Sensor {
 
     private void runChecks(SensorContext context, IkoraSourceCode sourceCode){
         for(Object object: checks.all()){
-            IkoraCheck check = (IkoraCheck)object;
+            IkoraRule check = (IkoraRule)object;
 
             check.setRuleKey(checks.ruleKey(check));
             check.setIkoraSourceCode(sourceCode);
