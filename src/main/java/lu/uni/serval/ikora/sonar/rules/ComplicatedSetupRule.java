@@ -3,7 +3,6 @@ package lu.uni.serval.ikora.sonar.rules;
 import lu.uni.serval.ikora.core.model.SourceFile;
 import lu.uni.serval.ikora.core.model.SourceNode;
 import lu.uni.serval.ikora.smells.SmellConfiguration;
-import lu.uni.serval.ikora.smells.checks.ComplexLocatorCheck;
 import lu.uni.serval.ikora.smells.checks.ComplicatedSetupCheck;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;

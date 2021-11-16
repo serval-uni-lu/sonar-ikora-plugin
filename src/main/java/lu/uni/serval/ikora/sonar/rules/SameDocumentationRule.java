@@ -11,7 +11,7 @@ import java.util.Set;
 
 @Rule(key = SameDocumentationRule.RULE_KEY)
 public class SameDocumentationRule extends IkoraLintRule {
-    public static final String RULE_KEY = "DocumentationDifferentThanNameCheck";
+    public static final String RULE_KEY = "same-documentation-rule";
     private static final Logger LOG = Loggers.get(SameDocumentationRule.class);
 
     @Override

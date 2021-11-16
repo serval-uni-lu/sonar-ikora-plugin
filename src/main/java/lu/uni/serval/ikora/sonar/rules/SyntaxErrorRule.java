@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Rule(key = SyntaxErrorRule.RULE_KEY)
 public class SyntaxErrorRule extends ParsingErrorRule {
-    public static final String RULE_KEY = "SyntaxErrorCheck";
+    public static final String RULE_KEY = "syntax-error-rule";
 
     @Override
     public void validate() {

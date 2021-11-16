@@ -8,7 +8,7 @@ import org.sonar.check.Rule;
 
 @Rule(key = TestCaseWithPeriodRule.RULE_KEY)
 public class TestCaseWithPeriodRule extends IkoraLintRule {
-    public static final String RULE_KEY = "TestCaseWithPeriodCheck";
+    public static final String RULE_KEY = "testcase-with-period-rule";
 
     private static final Logger LOG = Loggers.get(TestCaseWithPeriodRule.class);
 

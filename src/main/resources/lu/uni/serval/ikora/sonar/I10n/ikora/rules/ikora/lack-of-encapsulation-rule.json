@@ -1,13 +1,13 @@
 {
-  "title": "User keyword should not have too many arguments",
+  "title": "Lack of Encapsulation",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
     "func": "Constant\/Issue",
-    "constantCost": "25min"
+    "constantCost": "40min"
   },
   "tags": [
     "suspicious"
   ],
-  "defaultSeverity": "Major"
+  "defaultSeverity": "Minor"
 }

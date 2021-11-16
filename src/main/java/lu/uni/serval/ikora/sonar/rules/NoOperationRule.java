@@ -8,7 +8,7 @@ import org.sonar.check.Rule;
 
 @Rule(key = NoOperationRule.RULE_KEY)
 public class NoOperationRule extends IkoraLintRule {
-    public static final String RULE_KEY = "NoOperationCheck";
+    public static final String RULE_KEY = "no-operation-rule";
 
     private static final Logger LOG = Loggers.get(NoOperationRule.class);
 

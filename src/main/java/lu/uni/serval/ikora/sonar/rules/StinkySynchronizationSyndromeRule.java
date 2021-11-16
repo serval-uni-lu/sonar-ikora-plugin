@@ -11,7 +11,7 @@ import java.util.Set;
 
 @Rule(key = StinkySynchronizationSyndromeRule.RULE_KEY)
 public class StinkySynchronizationSyndromeRule extends IkoraLintRule {
-    public static final String RULE_KEY = "SleepCheck";
+    public static final String RULE_KEY = "stinky-synchronization-syndrome-rule";
 
     private static final Logger LOG = Loggers.get(StinkySynchronizationSyndromeRule.class);
 

@@ -2,15 +2,15 @@ package lu.uni.serval.ikora.sonar.rules;
 
 import lu.uni.serval.ikora.core.model.SourceFile;
 import lu.uni.serval.ikora.core.model.TestCase;
+import lu.uni.serval.ikora.sonar.IkoraLanguage;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonar.check.Rule;
 
-@Rule(key = TestHasLessThan10StepsRule.RULE_KEY)
-public class TestHasLessThan10StepsRule extends IkoraLintRule {
-    public static final String RULE_KEY = "TestHasLessThan10StepsCheck";
-
-    private static final Logger LOG = Loggers.get(TestHasLessThan10StepsRule.class);
+@Rule(key = MinimumNumberTestCaseStepsRule.RULE_KEY)
+public class MinimumNumberTestCaseStepsRule extends IkoraLintRule {
+    public static final String RULE_KEY = "minimum-number-testcase-steps-rule";
+    private static final Logger LOG = Loggers.get(MinimumNumberTestCaseStepsRule.class);
 
     @Override
     public void validate() {
@@ -23,12 +23,14 @@ public class TestHasLessThan10StepsRule extends IkoraLintRule {
         }
     }
 
-    private void checkNumberStep(TestCase testCase) {
-        if(testCase.getSteps().size() > 10){
-            LOG.debug(String.format("Add too many steps issue for test case '%s'", testCase));
+    private void checkNumberStep(TestCase testCase){
+        int minSteps = getInt(IkoraLanguage.MAXIMUM_NUMBER_ARGS, 3);
+
+        if(testCase.getSteps().size() < minSteps){
+            LOG.debug(String.format("Add missing steps issue for '%s'", testCase));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
-                    "Test case should have less than 10 steps",
+                    "Test case needs to have at least two steps",
                     testCase.getNameToken().getLine(),
                     testCase.getNameToken().getStartOffset());
 

@@ -30,7 +30,6 @@ public class IkoraLanguage extends AbstractLanguage {
         this.configuration = configuration;
     }
 
-
     @Override
     public String[] getFileSuffixes() {
         String[] suffixes = filterEmptyStrings(configuration.getStringArray(IkoraLanguage.FILE_SUFFIXES_KEY));

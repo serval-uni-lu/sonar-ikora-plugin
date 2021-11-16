@@ -7,6 +7,8 @@ import org.sonar.api.measures.Metric;
 import java.io.Serializable;
 
 public class MetricUtils {
+    private MetricUtils() {}
+
     static <T extends Serializable> void saveMeasure(SensorContext context, InputFile inputFile, Metric<T> metric, T value){
         context.<T>newMeasure()
                 .withValue(value)

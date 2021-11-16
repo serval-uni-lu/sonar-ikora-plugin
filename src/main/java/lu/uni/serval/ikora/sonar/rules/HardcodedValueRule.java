@@ -10,10 +10,10 @@ import org.sonar.check.Rule;
 
 import java.util.Set;
 
-@Rule(key = HardcodedValuesRule.RULE_KEY)
-public class HardcodedValuesRule extends IkoraLintRule {
-    public static final String RULE_KEY = "hardcoded-environment-configuration-rule";
-    private static final Logger LOG = Loggers.get(HardcodedValuesRule.class);
+@Rule(key = HardcodedValueRule.RULE_KEY)
+public class HardcodedValueRule extends IkoraLintRule {
+    public static final String RULE_KEY = "hardcoded-value-rule";
+    private static final Logger LOG = Loggers.get(HardcodedValueRule.class);
 
     @Override
     public void validate() {

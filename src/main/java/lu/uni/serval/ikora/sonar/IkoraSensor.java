@@ -24,6 +24,7 @@ import org.sonar.api.measures.FileLinesContextFactory;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,6 +51,7 @@ public class IkoraSensor implements Sensor {
     }
 
     @Override
+    @ParametersAreNonnullByDefault
     public void execute(SensorContext context) {
         List<InputFile> inputFiles = getInputFiles(context);
         if (inputFiles.isEmpty()) return;
@@ -70,7 +72,6 @@ public class IkoraSensor implements Sensor {
             IkoraSourceCode sourceCode = new IkoraSourceCode(inputFile, sourceFile, errors);
 
             computeMetrics(context, sourceCode);
-            saveSyntaxHighlighting(context, sourceCode);
             runChecks(context, sourceCode);
         }
     }
@@ -107,10 +108,6 @@ public class IkoraSensor implements Sensor {
         LineAnalyzer.analyse(context, fileLinesContextFactory, sourceCode);
         FunctionAnalyzer.analyse(context, sourceCode);
         CpdAnalyzer.analyse(context, sourceCode);
-    }
-
-    private void saveSyntaxHighlighting(SensorContext context, IkoraSourceCode sourceCode) {
-        //TODO: generate highlights
     }
 
     private void runChecks(SensorContext context, IkoraSourceCode sourceCode){

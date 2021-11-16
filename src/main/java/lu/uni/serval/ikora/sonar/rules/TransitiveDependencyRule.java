@@ -11,7 +11,7 @@ import java.util.List;
 
 @Rule(key = TransitiveDependencyRule.RULE_KEY)
 public class TransitiveDependencyRule extends IkoraLintRule {
-    public static final String RULE_KEY = "TransitiveDependencyCheck";
+    public static final String RULE_KEY = "transitive-dependency-rule";
 
     private static final Logger LOG = Loggers.get(TransitiveDependencyRule.class);
 

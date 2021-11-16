@@ -1,13 +1,13 @@
 {
-  "title": "Keywords should have at least a one step",
+  "title": "Hardcoded Environment Configuration",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
     "func": "Constant\/Issue",
-    "constantCost": "15min"
+    "constantCost": "40min"
   },
   "tags": [
     "suspicious"
   ],
-  "defaultSeverity": "Blocker"
+  "defaultSeverity": "Critical"
 }

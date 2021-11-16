@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Rule(key = SymbolErrorRule.RULE_KEY)
 public class SymbolErrorRule extends ParsingErrorRule {
-    public static final String RULE_KEY = "SymbolErrorCheck";
+    public static final String RULE_KEY = "symbol-error-rule";
 
     @Override
     public void validate() {

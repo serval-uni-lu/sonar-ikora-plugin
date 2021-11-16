@@ -7,7 +7,7 @@ import org.sonar.check.Rule;
 
 @Rule(key = SpacesInTagsRule.RULE_KEY)
 public class SpacesInTagsRule extends IkoraLintRule {
-    public static final String RULE_KEY = "SpacesInTagsCheck";
+    public static final String RULE_KEY = "spaces-in-tags-rule";
 
     private static final Logger LOG = Loggers.get(SpacesInTagsRule.class);
 

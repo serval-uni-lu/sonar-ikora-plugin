@@ -1,19 +1,21 @@
 {
   "name": "Sonar way",
   "ruleKeys": [
-    "SyntaxErrorCheck",
-    "SymbolErrorCheck",
-    "KeywordDocumentationCheck",
-    "KeywordHasMinimumOneStepCheck",
-    "MaximumNumberOfArgumentsCheck",
-    "NoOperationCheck",
-    "TestHasLessThan10StepsCheck",
-    "DocumentationDifferentThanNameCheck",
-    "SleepCheck",
-    "TestCaseHasMinimumNumberOfSteps",
-    "NoLogicInTestCaseCheck",
-    "TransitiveDependencyCheck",
-    "TestCaseWithPeriodCheck",
-    "SpacesInTagsCheck"
+    "syntax-error-rule",
+    "symbol-error-rule",
+    "complicated-setup-rule",
+    "conditional-assertion-rule",
+    "maximum-number-arguments-rule",
+    "maximum-number-testcase-steps-rule",
+    "minimum-number-testcase-steps-rule",
+    "missing-documentation-rule",
+    "no-logic-in-testcase-rule",
+    "no-operation-rule",
+    "same-documentation-rule",
+    "sensitive-locator-rule",
+    "space-in-tags-rule",
+    "stinky-synchronization-syndrome-rule",
+    "testcase-with-period-rule",
+    "transitive-dependency-rule"
   ]
 }
