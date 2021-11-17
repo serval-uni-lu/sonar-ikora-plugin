@@ -1,5 +1,5 @@
 {
-  "title": "Too many assertions are performed in the test.",
+  "title": "The assertion is hidden in a Keyword.",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

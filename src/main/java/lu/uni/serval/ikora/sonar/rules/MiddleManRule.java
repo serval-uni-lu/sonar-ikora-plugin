@@ -12,7 +12,7 @@ import java.util.Set;
 
 @Rule(key = MiddleManRule.RULE_KEY)
 public class MiddleManRule extends IkoraLintRule {
-    public static final String RULE_KEY = "noisy-logging-rule";
+    public static final String RULE_KEY = "middle-man-rule";
     private static final Logger LOG = Loggers.get(MiddleManRule.class);
 
     @Override

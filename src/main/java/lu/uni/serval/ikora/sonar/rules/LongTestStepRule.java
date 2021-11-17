@@ -12,7 +12,7 @@ import java.util.Set;
 
 @Rule(key = LongTestStepRule.RULE_KEY)
 public class LongTestStepRule extends IkoraLintRule {
-    public static final String RULE_KEY = "lack-of-encapsulation-rule";
+    public static final String RULE_KEY = "long-test-step-rule";
     private static final Logger LOG = Loggers.get(LongTestStepRule.class);
 
     @Override

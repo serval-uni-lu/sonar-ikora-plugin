@@ -11,7 +11,6 @@ public class RulesRepository {
             SyntaxErrorRule.class,
             SymbolErrorRule.class,
 
-            SensitiveLocatorRule.class,
             ComplicatedSetupRule.class,
             ConditionalAssertionRule.class,
             EagerTestRule.class,
@@ -21,21 +20,24 @@ public class RulesRepository {
             LackOfEncapsulationRule.class,
             LongTestStepRule.class,
             MaximumNumberArgumentsRule.class,
+            MaximumNumberTestCaseStepsRule.class,
             MiddleManRule.class,
+            MinimumNumberTestCaseStepsRule.class,
             MissingAssertionRule.class,
             MissingDocumentationRule.class,
+            NarcissisticRule.class,
+            NoLogicInTestCaseRule.class,
             NoisyLoggingRule.class,
             NoOperationRule.class,
             OnTheFlyRule.class,
-            MaximumNumberTestCaseStepsRule.class,
+            OverCheckingRule.class,
             SameDocumentationRule.class,
+            SensitiveLocatorRule.class,
             SneakyCheckingRule.class,
+            SpacesInTagsRule.class,
             StinkySynchronizationSyndromeRule.class,
-            MinimumNumberTestCaseStepsRule.class,
-            NoLogicInTestCaseRule.class,
-            TransitiveDependencyRule.class,
             TestCaseWithPeriodRule.class,
-            SpacesInTagsRule.class
+            TransitiveDependencyRule.class
     );
 
     public static List<Class<? extends IkoraRule>> getRuleClasses(){

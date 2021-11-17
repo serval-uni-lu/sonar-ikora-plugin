@@ -157,12 +157,6 @@
             <groupId>lu.uni.serval</groupId>
             <artifactId>ikora-smells</artifactId>
             <version>0.1.11-SNAPSHOT</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>edu.stanford.nlp</groupId>
-                    <artifactId>stanford-corenlp</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
     </dependencies>
 </project>
