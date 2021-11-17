@@ -1,0 +1,13 @@
+{
+  "title": "Logging during the setup and teardown of a test case.",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "40min"
+  },
+  "tags": [
+    "suspicious"
+  ],
+  "defaultSeverity": "Minor"
+}

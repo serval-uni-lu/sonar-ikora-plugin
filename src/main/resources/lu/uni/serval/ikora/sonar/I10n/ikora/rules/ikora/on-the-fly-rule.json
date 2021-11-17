@@ -1,0 +1,13 @@
+{
+  "title": "Expected value in the assertion is computed on the fly.",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "40min"
+  },
+  "tags": [
+    "suspicious"
+  ],
+  "defaultSeverity": "Minor"
+}

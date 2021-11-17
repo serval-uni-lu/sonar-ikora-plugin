@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Rule(key = NoLogicInTestCaseRule.RULE_KEY)
 public class NoLogicInTestCaseRule extends IkoraLintRule {
-    public static final String RULE_KEY = "no-logic-in-test-case-rule";
+    public static final String RULE_KEY = "no-logic-in-testcase-rule";
 
     private static final Logger LOG = Loggers.get(NoLogicInTestCaseRule.class);
 

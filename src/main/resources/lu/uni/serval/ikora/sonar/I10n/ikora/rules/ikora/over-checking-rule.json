@@ -1,0 +1,12 @@
+{
+  "title": "Too many assertions are performed in the test.",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "40min"
+  },
+  "tags": [
+    "suspicious"
+  ],
+  "defaultSeverity": "Minor",
