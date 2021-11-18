@@ -6,7 +6,7 @@
 
     <groupId>tech.ikora</groupId>
     <artifactId>sonar-ikora-plugin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>sonar-plugin</packaging>
 
     <name>Ikora Analyzer</name>
@@ -156,7 +156,7 @@
         <dependency>
             <groupId>lu.uni.serval</groupId>
             <artifactId>ikora-smells</artifactId>
-            <version>0.1.11-SNAPSHOT</version>
+            <version>0.1.11</version>
         </dependency>
     </dependencies>
 </project>
