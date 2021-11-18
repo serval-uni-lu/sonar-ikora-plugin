@@ -24,7 +24,7 @@ public class MissingDocumentationRule extends IkoraLintRule {
             LOG.debug(String.format("Add issue '%s' found in '%s'", RULE_KEY, node.getSourceFile().getName()));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
-                    "Too many logs can make the test output harder to understand.",
+                    "User keywords are expected to have a documentation tag with a non empty documentation block.",
                     node.getNameToken().getLine(),
                     node.getNameToken().getStartOffset());
 

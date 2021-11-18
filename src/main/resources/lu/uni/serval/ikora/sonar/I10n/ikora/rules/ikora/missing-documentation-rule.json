@@ -4,10 +4,10 @@
   "status": "ready",
   "remediation": {
     "func": "Constant\/Issue",
-    "constantCost": "20min"
+    "constantCost": "10min"
   },
   "tags": [
     "suspicious"
   ],
-  "defaultSeverity": "Major"
+  "defaultSeverity": "Ino"
 }
