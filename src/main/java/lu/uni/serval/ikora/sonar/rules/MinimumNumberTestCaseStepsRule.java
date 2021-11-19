@@ -24,15 +24,17 @@ public class MinimumNumberTestCaseStepsRule extends IkoraLintRule {
     }
 
     private void checkNumberStep(TestCase testCase){
-        int minSteps = getInt(IkoraLanguage.MAXIMUM_NUMBER_ARGS, 3);
+        int minSteps = getInt(IkoraLanguage.MINIMUM_NUMBER_TEST_STEPS, 3);
 
         if(testCase.getSteps().size() < minSteps){
             LOG.debug(String.format("Add missing steps issue for '%s'", testCase));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
-                    "Test case needs to have at least two steps",
+                    String.format("Test case needs to have at least %s steps to tell a story.", minSteps),
                     testCase.getNameToken().getLine(),
-                    testCase.getNameToken().getStartOffset());
+                    testCase.getNameToken().getStartOffset(),
+                    testCase.getNameToken().getEndOffset()
+            );
 
             ikoraSourceCode.addViolation(issue);
         }

@@ -26,9 +26,11 @@ public class MiddleManRule extends IkoraLintRule {
             LOG.debug(String.format("Add issue '%s' found in '%s'", RULE_KEY, node.getSourceFile().getName()));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
-                    "Too many logs can make the test output harder to understand.",
+                    "The keyword only perform a call to another one, this might lead to tests harder to follow.",
                     node.getNameToken().getLine(),
-                    node.getNameToken().getStartOffset());
+                    node.getNameToken().getStartOffset(),
+                    node.getNameToken().getEndOffset()
+            );
 
             ikoraSourceCode.addViolation(issue);
         }

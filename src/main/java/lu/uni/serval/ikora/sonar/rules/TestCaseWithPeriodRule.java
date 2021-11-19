@@ -28,9 +28,11 @@ public class TestCaseWithPeriodRule extends IkoraLintRule {
             LOG.debug(String.format("Add period in name issue for test case '%s'", testCase));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
-                    "Test case name should not contain periods",
+                    "Test case name should not contain periods to avoid confusion with suites.",
                     testCase.getNameToken().getLine(),
-                    testCase.getNameToken().getStartOffset());
+                    testCase.getNameToken().getStartOffset(),
+                    testCase.getNameToken().getEndOffset()
+            );
 
             ikoraSourceCode.addViolation(issue);
         }

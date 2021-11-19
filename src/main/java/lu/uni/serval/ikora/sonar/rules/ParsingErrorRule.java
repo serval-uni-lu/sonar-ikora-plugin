@@ -20,7 +20,9 @@ public class ParsingErrorRule extends IkoraLintRule {
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     error.getMessage(),
                     error.getRange().getStart().getLine(),
-                    error.getRange().getStart().getLineOffset());
+                    error.getRange().getStart().getLineOffset(),
+                    error.getRange().getEnd().getLineOffset()
+            );
 
             ikoraSourceCode.addViolation(issue);
         }

@@ -26,7 +26,9 @@ public class MissingDocumentationRule extends IkoraLintRule {
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     "User keywords are expected to have a documentation tag with a non empty documentation block.",
                     node.getNameToken().getLine(),
-                    node.getNameToken().getStartOffset());
+                    node.getNameToken().getStartOffset(),
+                    node.getNameToken().getEndOffset()
+            );
 
             ikoraSourceCode.addViolation(issue);
         }

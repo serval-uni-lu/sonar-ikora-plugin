@@ -28,7 +28,9 @@ public class HardcodedValueRule extends IkoraLintRule {
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     "Hardcoded value might make tests hard to understand.",
                     node.getNameToken().getLine(),
-                    node.getNameToken().getStartOffset());
+                    node.getNameToken().getStartOffset(),
+                    node.getNameToken().getEndOffset()
+            );
 
             ikoraSourceCode.addViolation(issue);
         }

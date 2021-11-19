@@ -26,9 +26,11 @@ public class SameDocumentationRule extends IkoraLintRule {
             LOG.debug(String.format("Add documentation same as name issue for '%s'", keyword));
 
             final IkoraIssue issue = new IkoraIssue(ruleKey,
-                    "Documentation should not be the same as the name",
+                    "Documentation should not be the same as the name of the object they define.",
                     keyword.getNameToken().getLine(),
-                    keyword.getNameToken().getStartOffset());
+                    keyword.getNameToken().getStartOffset(),
+                    keyword.getNameToken().getEndOffset()
+            );
 
             ikoraSourceCode.addViolation(issue);
         }

@@ -35,7 +35,9 @@ public class NoLogicInTestCaseRule extends IkoraLintRule {
                 IkoraIssue issue = new IkoraIssue(ruleKey,
                         "No control flow operation should be present in a test case",
                         step.getNameToken().getLine(),
-                        step.getNameToken().getStartOffset());
+                        step.getNameToken().getStartOffset(),
+                        step.getNameToken().getEndOffset()
+                );
 
                 ikoraSourceCode.addViolation(issue);
             }

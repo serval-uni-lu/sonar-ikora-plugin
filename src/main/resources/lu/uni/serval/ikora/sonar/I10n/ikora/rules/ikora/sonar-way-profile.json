@@ -15,7 +15,6 @@
     "middle-man-rule",
     "minimum-number-testcase-steps-rule",
     "missing-assertion-rule",
-    "missing-documentation-rule",
     "no-logic-in-testcase-rule",
     "no-operation-rule",
     "noisy-logging-rule",

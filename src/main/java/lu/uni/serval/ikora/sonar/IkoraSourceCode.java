@@ -28,8 +28,8 @@ public class IkoraSourceCode {
     }
 
     public void addViolation(IkoraIssue issue){
-        if(issue.getLine() < 0 || issue.getColumn() < 0){
-            LOG.warn(String.format("Failed to add issue in file %s :: %s", this.inputFile.filename(), issue.toString()));
+        if(issue.getTextRange().start().line() < 0){
+            LOG.warn(String.format("Failed to add issue in file %s :: %s", this.inputFile.filename(), issue));
             return;
         }
 

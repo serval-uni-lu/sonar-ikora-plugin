@@ -29,7 +29,9 @@ public class StinkySynchronizationSyndromeRule extends IkoraLintRule {
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     "Sleep keyword should be avoided in production",
                     node.getNameToken().getLine(),
-                    node.getNameToken().getStartOffset());
+                    node.getNameToken().getStartOffset(),
+                    node.getNameToken().getEndOffset()
+            );
 
             ikoraSourceCode.addViolation(issue);
         }

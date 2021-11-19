@@ -1,5 +1,5 @@
 {
-  "title": "Too many arguments in keyword",
+  "title": "Missing assertion",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

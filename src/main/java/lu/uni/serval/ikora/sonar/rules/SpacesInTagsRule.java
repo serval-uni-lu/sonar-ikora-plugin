@@ -29,12 +29,13 @@ public class SpacesInTagsRule extends IkoraLintRule {
     private void checkSpaces(KeywordDefinition keyword) {
         for(Literal tag: keyword.getTags()){
             if(tag.toString().contains(" ")){
-                LOG.debug(String.format("Add issue 'found space' found in '%s'", keyword.toString()));
+                LOG.debug(String.format("Add issue 'found space' found in '%s'", keyword));
 
                 IkoraIssue issue = new IkoraIssue(ruleKey,
-                        "Sleep keyword should be avoided in production",
+                        "Spaces should be avoided in tags because they may lead to confusion to their delimitation.",
                         tag.getNameToken().getLine(),
-                        tag.getNameToken().getStartOffset()
+                        tag.getNameToken().getStartOffset(),
+                        tag.getNameToken().getEndOffset()
                 );
 
                 ikoraSourceCode.addViolation(issue);

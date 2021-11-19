@@ -31,6 +31,15 @@ public final class IkoraPlugin implements Plugin {
                         .onQualifiers(Qualifiers.PROJECT)
                         .build(),
                 PropertyDefinition.builder(IkoraLanguage.MAXIMUM_NUMBER_TEST_STEPS)
+                        .name("Maximum test steps")
+                        .description("Maximum number of steps acceptable for a test.")
+                        .type(PropertyType.INTEGER)
+                        .defaultValue("10")
+                        .category(CATEGORY)
+                        .subCategory(SUBCATEGORY)
+                        .onQualifiers(Qualifiers.PROJECT)
+                        .build(),
+                PropertyDefinition.builder(IkoraLanguage.MINIMUM_NUMBER_TEST_STEPS)
                         .name("Minimum test steps")
                         .description("Minimum number of steps acceptable for a test.")
                         .type(PropertyType.INTEGER)

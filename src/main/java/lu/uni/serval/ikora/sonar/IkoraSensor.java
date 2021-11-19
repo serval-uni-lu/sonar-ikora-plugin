@@ -135,7 +135,7 @@ public class IkoraSensor implements Sensor {
             NewIssueLocation location = newIssue.newLocation()
                     .on(sourceCode.getInputFile())
                     .message(issue.getMessage())
-                    .at(sourceCode.getInputFile().selectLine(issue.getLine() == 0 ? 1 : issue.getLine()));
+                    .at(issue.getTextRange());
 
             newIssue.at(location).save();
         }

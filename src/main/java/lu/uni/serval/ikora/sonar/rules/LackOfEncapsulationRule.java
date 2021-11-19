@@ -26,9 +26,11 @@ public class LackOfEncapsulationRule extends IkoraLintRule {
             LOG.debug(String.format("Add issue '%s' found in '%s'", RULE_KEY, node.getSourceFile().getName()));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
-                    "Hardcoded value might make tests hard to understand.",
+                    "Using technical keywords in test case make the latter harder to read as a story.",
                     node.getNameToken().getLine(),
-                    node.getNameToken().getStartOffset());
+                    node.getNameToken().getStartOffset(),
+                    node.getNameToken().getEndOffset()
+            );
 
             ikoraSourceCode.addViolation(issue);
         }

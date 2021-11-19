@@ -9,5 +9,5 @@
   "tags": [
     "suspicious"
   ],
-  "defaultSeverity": "Minor"
+  "defaultSeverity": "Blocker"
 }

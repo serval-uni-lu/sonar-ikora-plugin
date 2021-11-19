@@ -31,8 +31,9 @@ public class MaximumNumberArgumentsRule extends IkoraLintRule {
             LOG.debug(String.format("Add too many arguments issue for '%s'", userKeyword));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
-                    "User keyword should have a maximum of 4 arguments",
+                    String.format("User keyword should have a maximum of %s arguments", maxArgs),
                     userKeyword.getNameToken().getLine(),
+                    userKeyword.getNameToken().getStartOffset(),
                     userKeyword.getNameToken().getEndOffset()
             );
 

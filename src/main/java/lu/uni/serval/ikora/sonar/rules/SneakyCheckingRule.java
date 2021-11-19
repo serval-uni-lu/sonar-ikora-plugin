@@ -28,7 +28,9 @@ public class SneakyCheckingRule extends IkoraLintRule {
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     "The assertion is hidden from the reader by adding levels of indirection.",
                     node.getNameToken().getLine(),
-                    node.getNameToken().getStartOffset());
+                    node.getNameToken().getStartOffset(),
+                    node.getNameToken().getEndOffset()
+            );
 
             ikoraSourceCode.addViolation(issue);
         }

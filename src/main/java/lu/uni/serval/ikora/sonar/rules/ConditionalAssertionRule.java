@@ -26,9 +26,11 @@ public class ConditionalAssertionRule extends IkoraLintRule {
             LOG.debug(String.format("Add issue '%s' found in '%s'", RULE_KEY, node.getSourceFile().getName()));
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
-                    "Hiding assertions might make the intent of the test harder to grasp.",
+                    "The execution of an assertion should not be dependent of a condition.",
                     node.getNameToken().getLine(),
-                    node.getNameToken().getStartOffset());
+                    node.getNameToken().getStartOffset(),
+                    node.getNameToken().getEndOffset()
+            );
 
             ikoraSourceCode.addViolation(issue);
         }
