@@ -1,6 +1,6 @@
 package lu.uni.serval.ikora.sonar.metrics;
 
-import lu.uni.serval.ikora.core.builder.Line;
+import lu.uni.serval.ikora.core.builder.parser.Line;
 import lu.uni.serval.ikora.core.model.SourceFile;
 import lu.uni.serval.ikora.sonar.IkoraSourceCode;
 import org.sonar.api.batch.sensor.SensorContext;

@@ -27,9 +27,9 @@ public class MiddleManRule extends IkoraLintRule {
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     "The keyword only perform a call to another one, this might lead to tests harder to follow.",
-                    node.getNameToken().getLine(),
-                    node.getNameToken().getStartOffset(),
-                    node.getNameToken().getEndOffset()
+                    node.getDefinitionToken().getLine(),
+                    node.getDefinitionToken().getStartOffset(),
+                    node.getDefinitionToken().getEndOffset()
             );
 
             ikoraSourceCode.addViolation(issue);

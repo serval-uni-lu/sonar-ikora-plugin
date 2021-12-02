@@ -33,9 +33,9 @@ public class SpacesInTagsRule extends IkoraLintRule {
 
                 IkoraIssue issue = new IkoraIssue(ruleKey,
                         "Spaces should be avoided in tags because they may lead to confusion to their delimitation.",
-                        tag.getNameToken().getLine(),
-                        tag.getNameToken().getStartOffset(),
-                        tag.getNameToken().getEndOffset()
+                        tag.getDefinitionToken().getLine(),
+                        tag.getDefinitionToken().getStartOffset(),
+                        tag.getDefinitionToken().getEndOffset()
                 );
 
                 ikoraSourceCode.addViolation(issue);

@@ -28,9 +28,9 @@ public class SensitiveLocatorRule extends IkoraLintRule {
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     "Complex locators lead to fragile tests as they are more prone to locator breakage",
-                    node.getNameToken().getLine(),
-                    node.getNameToken().getStartOffset(),
-                    node.getNameToken().getEndOffset()
+                    node.getDefinitionToken().getLine(),
+                    node.getDefinitionToken().getStartOffset(),
+                    node.getDefinitionToken().getEndOffset()
             );
 
             ikoraSourceCode.addViolation(issue);

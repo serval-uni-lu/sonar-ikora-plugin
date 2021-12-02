@@ -27,9 +27,9 @@ public class NoisyLoggingRule extends IkoraLintRule {
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     "Too many logs can make the test output harder to understand.",
-                    node.getNameToken().getLine(),
-                    node.getNameToken().getStartOffset(),
-                    node.getNameToken().getEndOffset()
+                    node.getDefinitionToken().getLine(),
+                    node.getDefinitionToken().getStartOffset(),
+                    node.getDefinitionToken().getEndOffset()
             );
 
             ikoraSourceCode.addViolation(issue);

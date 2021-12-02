@@ -33,12 +33,12 @@ public class FunctionAnalyzer {
     private static void analyzeFunctions(SourceFile sourceFile, Set<Integer> functions, Set<Integer> statements) {
         analyzeKeywords(sourceFile.getTestCases(), functions, statements);
         analyzeKeywords(sourceFile.getUserKeywords(), functions, statements);
-        sourceFile.getVariables().forEach(variable -> statements.add(variable.getNameToken().getLine()));
+        sourceFile.getVariables().forEach(variable -> statements.add(variable.getDefinitionToken().getLine()));
     }
 
     private static void analyzeKeywords(List<? extends KeywordDefinition> keywords, Set<Integer> functions, Set<Integer> statements){
         for(KeywordDefinition keyword: keywords){
-            functions.add(keyword.getNameToken().getLine());
+            functions.add(keyword.getDefinitionToken().getLine());
 
             for(Step step: keyword.getSteps()){
                 analyzeSteps(step, statements);
@@ -47,7 +47,7 @@ public class FunctionAnalyzer {
     }
 
     private static void analyzeSteps(Step step, Set<Integer> statements){
-        statements.add(step.getNameToken().getLine());
+        statements.add(step.getDefinitionToken().getLine());
 
         for(Step step1: step.getSteps()){
             analyzeSteps(step1, statements);

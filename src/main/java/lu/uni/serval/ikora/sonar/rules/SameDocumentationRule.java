@@ -27,9 +27,9 @@ public class SameDocumentationRule extends IkoraLintRule {
 
             final IkoraIssue issue = new IkoraIssue(ruleKey,
                     "Documentation should not be the same as the name of the object they define.",
-                    keyword.getNameToken().getLine(),
-                    keyword.getNameToken().getStartOffset(),
-                    keyword.getNameToken().getEndOffset()
+                    keyword.getDefinitionToken().getLine(),
+                    keyword.getDefinitionToken().getStartOffset(),
+                    keyword.getDefinitionToken().getEndOffset()
             );
 
             ikoraSourceCode.addViolation(issue);

@@ -35,9 +35,9 @@ public class NoOperationRule extends IkoraLintRule {
 
                     IkoraIssue issue = new IkoraIssue(ruleKey,
                             "No operation keyword should be avoided in production",
-                            step.getNameToken().getLine(),
-                            step.getNameToken().getStartOffset(),
-                            step.getNameToken().getEndOffset()
+                            step.getDefinitionToken().getLine(),
+                            step.getDefinitionToken().getStartOffset(),
+                            step.getDefinitionToken().getEndOffset()
                     );
 
                     ikoraSourceCode.addViolation(issue);

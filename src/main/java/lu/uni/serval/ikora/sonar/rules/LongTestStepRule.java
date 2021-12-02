@@ -27,9 +27,9 @@ public class LongTestStepRule extends IkoraLintRule {
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     "Test step should not perform too many actions.",
-                    node.getNameToken().getLine(),
-                    node.getNameToken().getStartOffset(),
-                    node.getNameToken().getEndOffset()
+                    node.getDefinitionToken().getLine(),
+                    node.getDefinitionToken().getStartOffset(),
+                    node.getDefinitionToken().getEndOffset()
             );
 
             ikoraSourceCode.addViolation(issue);

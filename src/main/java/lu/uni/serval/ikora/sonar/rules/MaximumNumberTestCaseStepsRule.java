@@ -32,9 +32,9 @@ public class MaximumNumberTestCaseStepsRule extends IkoraLintRule {
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     String.format("Test case should have less than %d steps", maxSteps),
-                    testCase.getNameToken().getLine(),
-                    testCase.getNameToken().getStartOffset(),
-                    testCase.getNameToken().getEndOffset()
+                    testCase.getDefinitionToken().getLine(),
+                    testCase.getDefinitionToken().getStartOffset(),
+                    testCase.getDefinitionToken().getEndOffset()
             );
 
             ikoraSourceCode.addViolation(issue);

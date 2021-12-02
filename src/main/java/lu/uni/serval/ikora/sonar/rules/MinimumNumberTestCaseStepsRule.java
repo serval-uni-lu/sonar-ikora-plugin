@@ -31,9 +31,9 @@ public class MinimumNumberTestCaseStepsRule extends IkoraLintRule {
 
             IkoraIssue issue = new IkoraIssue(ruleKey,
                     String.format("Test case needs to have at least %s steps to tell a story.", minSteps),
-                    testCase.getNameToken().getLine(),
-                    testCase.getNameToken().getStartOffset(),
-                    testCase.getNameToken().getEndOffset()
+                    testCase.getDefinitionToken().getLine(),
+                    testCase.getDefinitionToken().getStartOffset(),
+                    testCase.getDefinitionToken().getEndOffset()
             );
 
             ikoraSourceCode.addViolation(issue);
