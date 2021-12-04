@@ -24,7 +24,5 @@
     "sensitive-locator-rule",
     "spaces-in-tags-rule",
     "stinky-synchronization-syndrome-rule",
-    "testcase-with-period-rule",
-    "transitive-dependency-rule"
-  ]
+    "testcase-with-period-rule"]
 }
