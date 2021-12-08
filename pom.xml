@@ -116,6 +116,37 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>2.0.0</version>
+                <configuration>
+                    <verbose>false</verbose>
+                    <organizationName>University of Luxembourg</organizationName>
+                    <inceptionYear>2020</inceptionYear>
+                    <projectName>sonar-ikora-plugin</projectName>
+                    <licenseName>apache2</licenseName>
+                    <licenseResolver>${project.baseUri}/src/license</licenseResolver>
+                    <excludes>
+                        <exclude>**/*.json</exclude>
+                        <exclude>**/*.properties</exclude>
+                        <exclude>**/*.xml</exclude>
+                        <exclude>**/*.robot</exclude>
+                        <exclude>**/*.txt</exclude>
+                        <exclude>**/*.html</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>license-check</id>
+                        <goals>
+                            <goal>check-file-header</goal>
+                        </goals>
+                        <phase>process-sources</phase>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -123,7 +154,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.8.1</version>
+            <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
 
@@ -156,7 +187,7 @@
         <dependency>
             <groupId>lu.uni.serval</groupId>
             <artifactId>ikora-smells</artifactId>
-            <version>0.1.12-SNAPSHOT</version>
+            <version>0.1.12</version>
             <exclusions>
                 <exclusion>
                     <groupId>edu.stanford.nlp</groupId>
