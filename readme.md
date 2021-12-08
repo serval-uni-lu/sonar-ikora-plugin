@@ -18,7 +18,7 @@ sonar-ikora-plugin is a code analyzer for Robot Framework.
 
 ## Build from source
 
-1. Clone the project on your machine using ```git clone https://github.com/UL-SnT-Serval/ikora-core.git``` .
+1. Clone the project on your machine using ```git clone https://github.com/kabinja/sonar-ikora-plugin.git``` .
 2. Move to the directory.
 3. run the Maven command ```mvn clean install```.
 
