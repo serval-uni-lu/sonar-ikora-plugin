@@ -1,5 +1,5 @@
 {
-  "title": "Hardcoded Value",
+  "title": "Dead Code",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

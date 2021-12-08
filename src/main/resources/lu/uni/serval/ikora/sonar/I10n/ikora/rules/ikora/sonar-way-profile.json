@@ -5,6 +5,7 @@
     "symbol-error-rule",
     "complicated-setup-rule",
     "conditional-assertion-rule",
+    "dead-code-rule",
     "hardcoded-environment-configuration-rule",
     "hardcoded-value-rule",
     "hiding-test-data-rule",

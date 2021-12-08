@@ -13,6 +13,7 @@ public class RulesRepository {
 
             ComplicatedSetupRule.class,
             ConditionalAssertionRule.class,
+            DeadCodeRule.class,
             HardcodedEnvironmentConfigurationRule.class,
             HardcodedValueRule.class,
             HidingTestDataRule.class,
@@ -24,7 +25,6 @@ public class RulesRepository {
             MinimumNumberTestCaseStepsRule.class,
             MissingAssertionRule.class,
             MissingDocumentationRule.class,
-            NoLogicInTestCaseRule.class,
             NoisyLoggingRule.class,
             NoOperationRule.class,
             OnTheFlyRule.class,
