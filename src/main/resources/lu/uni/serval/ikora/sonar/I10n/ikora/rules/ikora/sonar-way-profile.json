@@ -25,5 +25,6 @@
     "sensitive-locator-rule",
     "spaces-in-tags-rule",
     "stinky-synchronization-syndrome-rule",
-    "testcase-with-period-rule"]
+    "testcase-with-period-rule"
+  ]
 }

@@ -46,6 +46,7 @@ public class RulesRepository {
             MissingAssertionRule.class,
             MissingDocumentationRule.class,
             NoisyLoggingRule.class,
+            NoLogicInTestCaseRule.class,
             NoOperationRule.class,
             OnTheFlyRule.class,
             OverCheckingRule.class,
