@@ -47,9 +47,9 @@ public class NoLogicInTestCaseRule extends IkoraLintRule {
     private void checkLogicSteps(TestCase testCase) {
         for(Step step: testCase.getSteps()){
             Optional<Keyword> keyword = step.getKeywordCall().flatMap(KeywordCall::getKeyword);
-            boolean isControlFlow = keyword.isPresent() && keyword.get().getType() == Keyword.Type.CONTROL_FLOW;
+            boolean isBranching = keyword.isPresent() && keyword.get().getType() == Keyword.Type.BRANCHING;
 
-            if(isControlFlow || (step instanceof ForLoop && !testCase.hasTemplate())){
+            if(isBranching || (step instanceof ForLoop && !testCase.hasTemplate())){
                 LOG.debug(String.format("Add issue no logic steps allowed in '%s'", testCase));
 
                 IkoraIssue issue = new IkoraIssue(ruleKey,

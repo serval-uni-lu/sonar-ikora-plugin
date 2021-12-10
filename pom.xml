@@ -187,7 +187,7 @@
         <dependency>
             <groupId>lu.uni.serval</groupId>
             <artifactId>ikora-smells</artifactId>
-            <version>0.1.12</version>
+            <version>0.1.13-SNAPSHOT</version>
             <exclusions>
                 <exclusion>
                     <groupId>edu.stanford.nlp</groupId>
