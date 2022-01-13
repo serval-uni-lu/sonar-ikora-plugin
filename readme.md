@@ -8,7 +8,7 @@ sonar-ikora-plugin is a code analyzer for Robot Framework.
 
 ## Features
 
-* 15 Rules
+* 28 Rules
 * Metrics (number of lines, code duplication)
 
 ## Build requirements
