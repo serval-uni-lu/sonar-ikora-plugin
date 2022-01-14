@@ -22,6 +22,11 @@ sonar-ikora-plugin is a code analyzer for Robot Framework.
 2. Move to the directory.
 3. run the Maven command ```mvn clean install```.
 
-License
--------
+## Limitations
+
+* The code present in Python files is not covered by this plugin, which may lead to misses when resolving keyword definitions.
+* Currently, the libraries are defined in a fixed [JSON file](https://raw.githubusercontent.com/UL-SnT-Serval/ikora-core/master/src/main/resources/libraries.json).
+
+## License
+
 Code is under the [Apache Licence v2](https://www.apache.org/licenses/LICENSE-2.0.txt).
