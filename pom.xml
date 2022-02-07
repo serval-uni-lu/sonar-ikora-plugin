@@ -31,8 +31,8 @@
 
     <licenses>
         <license>
-            <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <name>GNU LESSER GENERAL PUBLIC LICENSE, Version 3</name>
+            <url>https://www.gnu.org/licenses/lgpl-3.0.en.html</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -126,8 +126,7 @@
                     <organizationName>University of Luxembourg</organizationName>
                     <inceptionYear>2020</inceptionYear>
                     <projectName>sonar-ikora-plugin</projectName>
-                    <licenseName>apache2</licenseName>
-                    <licenseResolver>${project.baseUri}/src/license</licenseResolver>
+                    <licenseName>lgpl_v3</licenseName>
                     <excludes>
                         <exclude>**/*.json</exclude>
                         <exclude>**/*.properties</exclude>
@@ -166,6 +165,13 @@
         </dependency>
 
         <dependency>
+            <groupId>org.sonarsource.analyzer-commons</groupId>
+            <artifactId>sonar-analyzer-test-commons</artifactId>
+            <version>1.23.0.957</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.sonarsource.sonarqube</groupId>
             <artifactId>sonar-plugin-api</artifactId>
             <version>9.3.0.51899</version>
@@ -178,11 +184,6 @@
             <version>1.23.0.957</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.sonarsource.analyzer-commons</groupId>
-            <artifactId>sonar-analyzer-test-commons</artifactId>
-            <version>1.23.0.957</version>
-        </dependency>
 
         <dependency>
             <groupId>lu.uni.serval</groupId>
