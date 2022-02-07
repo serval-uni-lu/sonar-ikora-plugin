@@ -32,7 +32,6 @@ public class IkoraLanguage extends AbstractLanguage {
 
     public static final String KEY = "ikora";
     public static final String REPOSITORY_KEY = "ikora";
-    public static final String REPOSITORY_NAME = "SonarAnalyzer";
 
     public static final String FILE_SUFFIXES_KEY = "sonar.ikora.file.suffixes";
     public static final String MAXIMUM_NUMBER_ARGS = "sonar.ikora.max.args";
