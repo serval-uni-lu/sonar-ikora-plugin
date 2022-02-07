@@ -29,4 +29,4 @@ sonar-ikora-plugin is a code analyzer for Robot Framework.
 
 ## License
 
-Code is under the [Apache Licence v2](https://www.apache.org/licenses/LICENSE-2.0.txt).
+Code is under the [GNU LESSER GENERAL PUBLIC LICENSE Version 3](https://www.gnu.org/licenses/lgpl-3.0.en.html).
