@@ -35,6 +35,6 @@ class IkoraPluginTest {
         Plugin.Context context = new Plugin.Context(SonarRuntimeImpl.forSonarQube(Version.create(9, 1), SonarQubeSide.SERVER, SonarEdition.COMMUNITY));
 
         new IkoraPlugin().define(context);
-        assertEquals(10, context.getExtensions().size());
+        assertEquals(9, context.getExtensions().size());
     }
 }

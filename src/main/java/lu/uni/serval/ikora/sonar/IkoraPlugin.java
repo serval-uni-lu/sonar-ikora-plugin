@@ -79,7 +79,6 @@ public final class IkoraPlugin implements Plugin {
                         .onQualifiers(Qualifiers.PROJECT)
                         .build(),
                 IkoraLanguage.class,
-                IkoraRulesDefinition.class,
                 IkoraQualityProfile.class,
                 IkoraSensor.class
         );
